@@ -1,4 +1,4 @@
-package com.gof.behavioral.strategy.observer;
+package com.gof.behavioral.observer;
 
 import java.text.MessageFormat;
 import java.util.concurrent.ForkJoinPool;
