@@ -3,7 +3,7 @@ package com.gof.behavioral.strategy.discount.individual;
 import java.math.BigDecimal;
 
 /**
- * Discount for Carnival
+ * ChainDiscount for Carnival
  */
 public class Carnival implements Discount {
 
