@@ -19,10 +19,14 @@ public class AppMain {
                         Program.ProgramGuideBuilder.aProgramGuide()
                                 .withStart(LocalDateTime.now())
                                 .withFinish(LocalDateTime.now().plus(Duration.ofHours(1)))
+                                .withDescription("Mickey movie")
+                                .withCategory(Arrays.asList(Category.KIDS, Category.MOVIES))
                                 .build(),
                         Program.ProgramGuideBuilder.aProgramGuide()
                                 .withStart(LocalDateTime.now().plus(Duration.ofMinutes(65)))
                                 .withFinish(LocalDateTime.now().plus(Duration.ofMinutes(95)))
+                                .withDescription("New Zeland x Canada - soccer match")
+                                .withCategory(Arrays.asList(Category.SPORT))
                                 .build()
                 ))
                 .build();
