@@ -15,7 +15,7 @@ public class AppMain {
     private static final Logger log = Logger.getLogger(AppMain.class);
 
     public static void main(String[] args) {
-        final TVChannel tvGuide = TVChannel.ChannelBuilder.aChannel()
+        final TVChannel tvChannel = TVChannel.ChannelBuilder.aChannel()
                 .withName("ESPN")
                 .withCategories(Arrays.asList(Category.SPORT))
                 .withProgramGuide(Arrays.asList(
@@ -33,23 +33,36 @@ public class AppMain {
                                 .build()
                 ))
                 .build();
+
+        log.info("Using client consumers of strategy");
+        log.info("Type Rest");
+        Context restApi = new RestApi();
+        restApi.defineStrategy(PrinterStrategy.toJson());
+        log.info(restApi.print(tvChannel));
+
+        log.info("Type Browser");
+        Context browser = new Browser();
+        browser.defineStrategy(PrinterStrategy.toGzip());
+        log.info(browser.print(tvChannel));
+
+        log.info("Calling directly..only for didactics reason");
         PrinterStrategy normalStrategy = PrinterStrategy.normalStrategy();
-        final String normalFormat = normalStrategy.print(tvGuide);
+        final String normalFormat = normalStrategy.print(tvChannel);
         log.info("Normal strategy");
         log.info(normalFormat);
 
         PrinterStrategy jsonStrategy = PrinterStrategy.toJson();
-        final String jsonFormat = jsonStrategy.print(tvGuide);
+        final String jsonFormat = jsonStrategy.print(tvChannel);
         log.info("JSON strategy");
         log.info(jsonFormat);
 
         PrinterStrategy xmlStrategy = PrinterStrategy.toXML();
-        final String xmlFormat = xmlStrategy.print(tvGuide);
+        final String xmlFormat = xmlStrategy.print(tvChannel);
         log.info("XML strategy");
         log.info(xmlFormat);
 
         PrinterStrategy gzipStrategy = PrinterStrategy.toGzip();
-        final String gzipFormat = gzipStrategy.print(tvGuide);
+        final String gzipFormat = gzipStrategy.print(tvChannel);
         log.info("GZIP strategy");
         log.info(gzipFormat);
     }
