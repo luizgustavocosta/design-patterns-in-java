@@ -10,10 +10,18 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
+/**
+ * The type App main.
+ */
 public class AppMain {
 
     private static final Logger log = Logger.getLogger(AppMain.class);
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         final TVChannel tvChannel = TVChannel.ChannelBuilder.aChannel()
                 .withName("ESPN")
