@@ -4,12 +4,15 @@ import com.gof.behavioral.strategy.model.Category;
 import com.gof.behavioral.strategy.model.Program;
 import com.gof.behavioral.strategy.model.TVChannel;
 import com.gof.behavioral.strategy.printer.PrinterStrategy;
+import org.apache.log4j.Logger;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class AppMain {
+
+    private static final Logger log = Logger.getLogger(AppMain.class);
 
     public static void main(String[] args) {
         final TVChannel tvGuide = TVChannel.ChannelBuilder.aChannel()
@@ -30,12 +33,24 @@ public class AppMain {
                                 .build()
                 ))
                 .build();
+        PrinterStrategy normalStrategy = PrinterStrategy.normalStrategy();
+        final String normalFormat = normalStrategy.print(tvGuide);
+        log.info("Normal strategy");
+        log.info(normalFormat);
+
         PrinterStrategy jsonStrategy = PrinterStrategy.toJson();
         final String jsonFormat = jsonStrategy.print(tvGuide);
-        System.out.println(jsonFormat);
+        log.info("JSON strategy");
+        log.info(jsonFormat);
 
         PrinterStrategy xmlStrategy = PrinterStrategy.toXML();
         final String xmlFormat = xmlStrategy.print(tvGuide);
-        System.out.println(xmlFormat);
+        log.info("XML strategy");
+        log.info(xmlFormat);
+
+        PrinterStrategy gzipStrategy = PrinterStrategy.toGzip();
+        final String gzipFormat = gzipStrategy.print(tvGuide);
+        log.info("GZIP strategy");
+        log.info(gzipFormat);
     }
 }
