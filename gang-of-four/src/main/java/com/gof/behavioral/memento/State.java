@@ -15,7 +15,7 @@ public class State<T> {
     }
 
     public static StateBuilder getAStateBuilder() {
-        return new StateBuilder<>();
+        return new StateBuilder();
     }
 
     @Override
@@ -25,16 +25,16 @@ public class State<T> {
                 '}';
     }
 
-    public static class StateBuilder<T> {
-        private List<T> states;
+    public static class StateBuilder {
+        private List<?> states;
 
-        public StateBuilder<T> withStates(List<T> states) {
+        public StateBuilder withStates(List<?> states) {
             this.states = states;
             return this;
         }
 
-        public State<T> create() {
-            return new State<T>(states);
+        public State<?> create() {
+            return new State<>(states);
         }
     }
 }

@@ -1,25 +1,26 @@
 package com.gof.behavioral.memento;
 
+import java.util.Objects;
+
 /**
  * ConstraintSolver
  * Creates a memento containing a snapshot of its current internal state.
  * Uses the memento to restore its internal state.
- * @param <T>
  */
-public class Originator<T> {
+public class Originator {
 
-    private State<T> state;
+    private State<?> state;
 
-    public Originator(State<T> state) {
+    public Originator(State<?> state) {
         this.state = state;
     }
 
-
-    public void setMemento(Memento<T> memento) {
+    public void setMemento(Memento<?> memento) {
+        Objects.requireNonNull(memento);
         this.state = memento.getState();
     }
 
-    public Memento<T> createMemento(){
-        return new Memento<T>(state);
+    public Memento<?> createMemento(){
+        return new Memento<>(state);
     }
 }
