@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>head-first</module>
+        <module>gang-of-four</module>
     </modules>
 
     <properties>
@@ -35,6 +36,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
