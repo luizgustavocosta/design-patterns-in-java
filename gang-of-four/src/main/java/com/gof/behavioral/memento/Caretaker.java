@@ -1,5 +1,6 @@
 package com.gof.behavioral.memento;
 
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -12,17 +13,21 @@ public class Caretaker {
     private final Stack<Memento<?>> mementos = new Stack<>();
 
     public void add(Memento<?> memento){
-        mementos.add(memento);
+        mementos.push(memento);
+    }
+
+    public List<Memento<?>> getMementos() {
+        return mementos;
     }
 
     public Memento<?> get(){
-        if (0 == mementosAvailable()) {
+        if (!mementosAvailable()) {
             throw new IllegalStateException("There is no memento's available");
         }
         return mementos.pop();
     }
 
-    public int mementosAvailable() {
-        return mementos.size();
+    public boolean mementosAvailable() {
+        return mementos.size() != 0;
     }
 }

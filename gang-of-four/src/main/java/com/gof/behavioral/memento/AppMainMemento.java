@@ -1,33 +1,44 @@
 package com.gof.behavioral.memento;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Optional;
 
 public class AppMainMemento {
 
     public static void main(String[] args) {
 
-        final State<?> firstCheckPoint = State.getAStateBuilder()
-                .withStates(Arrays.asList("1", "2", "3"))
-                .create();
-        Originator firstOriginator = new Originator(firstCheckPoint);
+        Originator originator = new Originator(State.getAStateBuilder()
+                .withStates(Arrays.asList("2005", "2006"))
+                .create());
 
-        Caretaker careTaker = new Caretaker();
+        final Caretaker careTaker = new Caretaker();
+        careTaker.add(originator.createMemento());
 
-        careTaker.add(firstOriginator.createMemento());
+        originator.setState(State.getAStateBuilder()
+                .withStates(Arrays.asList("2019", "2018", "2017"))
+                .create());
 
-        final State<?> secondCheckPoint = State.getAStateBuilder()
-                .withStates(Arrays.asList(58, 62, 70, 94))
-                .create();
+        careTaker.add(originator.createMemento());
 
-        Originator secondOriginator = new Originator(secondCheckPoint);
-        careTaker.add(secondOriginator.createMemento());
+        originator.setState(State.getAStateBuilder()
+                .withStates(Collections.singletonList("2020"))
+                .create());
 
-        System.out.println("Memento works as a stack");
-        System.out.println("Memento's available = " + careTaker.mementosAvailable());
-        System.out.println("First memento  = " + careTaker.get());
-        System.out.println("Second memento  = " + careTaker.get());
-        System.out.println("Third memento  = " + careTaker.get());
+        careTaker.add(originator.createMemento());
 
+        while (careTaker.mementosAvailable()) {
+            final Memento<?> memento = careTaker.get();
+            final Optional<?> findLastYear = memento.getState().getStates().stream()
+                    .filter(state -> !state.equals("2020"))
+                    .findFirst();
+            if (findLastYear.isPresent()) {
+                originator.setMemento(memento);
+                System.out.println("Find the years " + originator.createMemento().getState() + ", do you want to go back ?");
+            } else {
+                System.out.println("Looking for other year checkpoint, different from 2020 ..:"+memento);
+            }
+        }
     }
 }
 

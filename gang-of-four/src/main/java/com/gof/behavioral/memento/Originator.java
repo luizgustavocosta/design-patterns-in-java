@@ -15,12 +15,16 @@ public class Originator {
         this.state = state;
     }
 
+    public void setState(State<?> state) {
+        this.state = state;
+    }
+
     public void setMemento(Memento<?> memento) {
         Objects.requireNonNull(memento);
         this.state = memento.getState();
     }
 
     public Memento<?> createMemento(){
-        return new Memento<>(state);
+        return new Memento<>(this.state);
     }
 }
