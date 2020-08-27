@@ -25,6 +25,5 @@ public class AppClientCommand {
                 new SpeedIncrease(speedReceiver));
 
         commands.stream().map(Invoker::new).forEach(Invoker::execute);
-
     }
 }
