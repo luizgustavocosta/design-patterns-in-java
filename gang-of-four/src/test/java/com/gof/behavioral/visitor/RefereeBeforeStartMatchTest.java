@@ -1,20 +1,22 @@
 package com.gof.behavioral.visitor;
 
 import org.assertj.core.api.WithAssertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class RefereeBeforeStartMatchTest implements WithAssertions {
 
     List<Player> players;
 
-    @Before
-    public void setUp() {
+    @BeforeAll
+    void setUp() {
         players = Stream.of(
                 Player.PlayerBuilder.aPlayer().withFirstName("Edson")
                         .withLastName("Nascimento")
@@ -30,7 +32,7 @@ public class RefereeBeforeStartMatchTest implements WithAssertions {
     }
 
     @Test
-    public void given_list_of_check_when_before_start_match_then_visit_them() {
+    void given_list_of_check_when_before_start_match_then_visit_them() {
         RefereeBeforeStartMatch node
                 = new RefereeBeforeStartMatch(players,
                 Team.TeamBuilder.aTeam().withUniformColor("black").build(),

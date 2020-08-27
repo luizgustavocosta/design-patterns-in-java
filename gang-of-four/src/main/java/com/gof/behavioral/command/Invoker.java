@@ -6,12 +6,21 @@ package com.gof.behavioral.command;
  */
 public class Invoker {
 
+    private final Command command;
+
     /**
-     * Execute.
+     * Instantiates a new Invoker.
      *
      * @param command the command
      */
-    public static void execute(Command command) {
+    public Invoker(Command command) {
+        this.command = command;
+    }
+
+    /**
+     * Execute.
+     */
+    public void execute() {
         command.execute();
     }
 }

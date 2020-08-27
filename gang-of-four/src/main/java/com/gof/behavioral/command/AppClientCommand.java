@@ -18,10 +18,13 @@ public class AppClientCommand {
         SpeedReceiver speedReceiver = new SpeedReceiver();
         HeadingReceiver headingReceiver = new HeadingReceiver();
 
-        final List<Command> clientCommands = Arrays.asList(new HeadingRight(headingReceiver),
-                new SpeedDecrease(speedReceiver), new HeadingLeft(headingReceiver), new SpeedIncrease(speedReceiver));
+        final List<Command> commands = Arrays.asList(
+                new HeadingRight(headingReceiver),
+                new SpeedDecrease(speedReceiver),
+                new HeadingLeft(headingReceiver),
+                new SpeedIncrease(speedReceiver));
 
-        clientCommands.forEach(Invoker::execute);
+        commands.stream().map(Invoker::new).forEach(Invoker::execute);
 
     }
 }

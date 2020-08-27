@@ -6,5 +6,8 @@ package com.gof.behavioral.command;
  */
 public interface Command {
 
+    /**
+     * Execute.
+     */
     void execute();
 }

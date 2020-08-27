@@ -1,12 +1,12 @@
 package com.gof.behavioral.chainofresponsibility.handler;
 
-import com.gof.behavioral.chainofresponsibility.handler.BuyThreePayTwo;
 import com.gof.behavioral.chainofresponsibility.request.Item;
 import com.gof.behavioral.chainofresponsibility.request.ShoppingCart;
 import org.assertj.core.api.WithAssertions;
 import org.javamoney.moneta.Money;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
@@ -14,12 +14,13 @@ import javax.money.MonetaryAmount;
 import java.util.Arrays;
 import java.util.List;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BuyThreePayTwoTest implements WithAssertions {
 
     private List<Item> items;
 
-    @Before
-    public void setUp() {
+    @BeforeAll
+    void setUp() {
         CurrencyUnit unitEuro = Monetary.getCurrency("EUR");
 
         items = Arrays.asList(
@@ -32,7 +33,7 @@ public class BuyThreePayTwoTest implements WithAssertions {
     }
 
     @Test
-    public void handleRequest() {
+    void handleRequest() {
         BuyThreePayTwo buyThreePayTwo = new BuyThreePayTwo(null, ShoppingCart.ShoppingCartBuilder.aShoppingCart().withItems(items).build());
         final MonetaryAmount monetaryAmount = buyThreePayTwo.handleRequest();
         final Item item = items.stream().findFirst().orElseThrow();
