@@ -1,16 +1,29 @@
 package com.gof.creational.builder;
 
+
+/**
+ * The type Item director.
+ * Director constructs an object using the Builder interface.
+ */
 public class ItemDirector {
 
-    private final MenuItem menuItem;
+    private final Builder builder;
 
-    public ItemDirector(MenuItem menuItem) {
-        this.menuItem = menuItem;
+    /**
+     * Instantiates a new Item director.
+     *
+     * @param builder the menu item
+     */
+    public ItemDirector(Builder builder) {
+        this.builder = builder;
     }
 
+    /**
+     * Construct.
+     */
     public void construct() {
-        menuItem.buildHamburger();
-        menuItem.buildBeverage();
-        menuItem.buildDessert();
+        builder.buildHamburger();
+        builder.buildBeverage();
+        builder.buildDessert();
     }
 }
