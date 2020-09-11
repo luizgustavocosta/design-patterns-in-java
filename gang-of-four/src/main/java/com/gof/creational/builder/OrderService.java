@@ -11,12 +11,12 @@ public class OrderService {
     /**
      * Order list.
      *
-     * @param builderList the builder list
+     * @param builders the builder list
      * @return the list
      */
-    List<Item> order(List<Builder> builderList) {
+    List<Item> order(List<Builder> builders) {
         final List<Item> items = new ArrayList<>();
-        builderList
+        builders
                 .forEach(menuItem -> {
                     final ItemDirector itemDirector = new ItemDirector(menuItem);
                     itemDirector.construct();
