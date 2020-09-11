@@ -8,14 +8,8 @@ class BuilderPatternShould {
 
     @Test
     void buildAMenuWithoutDessert() {
-        final Menu menu = Menu.aBuilder()
-                .withHamburger(Hamburger.aBuilder()
-                        .withBread(Bread.CIABATTA)
-                        .withCheese(Cheese.BRIE)
-                        .withMayonaisse(Mayonnaise.HOMEMADE)
-                        .build())
-                .build();
-        assertNull(menu.getDessert());
+        //FIXME please
+        assertFalse(true);
     }
 
 }

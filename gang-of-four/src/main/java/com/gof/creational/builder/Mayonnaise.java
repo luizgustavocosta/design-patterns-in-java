@@ -5,5 +5,5 @@ public enum Mayonnaise {
     REGULAR,
     LIGHT,
     HOMEMADE,
-    FRENCH_MAYONAISSE
+    FRENCH_MAYONNAISE
 }
