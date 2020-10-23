@@ -2,13 +2,37 @@ package com.gof.behavioral.decorator;
 
 import java.util.List;
 
-public interface Engine {
+/**
+ * The type Engine.
+ */
+public abstract class Engine {
 
-    ///The specifications are
-    // four-stroke, //OperationPrinciple
-    // turbocharged 1.6 liter,
-    // 90 degree V6 turbo engines.
-    // The maximum engine power rotational speed is 15,000 revolutions per minute (rpm).
-    // Coming to the amount of power generated, the exact numbers are highly classified in nature by the engine providers
+    /**
+     * The Horse power.
+     */
+    protected final int horsePower;
 
+    /**
+     * Instantiates a new Engine.
+     *
+     * @param horsePower the horse power
+     */
+    protected Engine(int horsePower) {
+        this.horsePower = horsePower;
+    }
+
+    /**
+     * Accepted by list.
+     *
+     * @return the list
+     */
+    public abstract List<EngineType> acceptedBy();
+
+    /**
+     * Horse power int.
+     *
+     * @return the int
+     */
+    public abstract int horsePower();
 }
+
