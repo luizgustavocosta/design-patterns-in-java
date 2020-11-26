@@ -22,19 +22,7 @@ public final class MyServiceSingleton {
         return instance;
     }
 
-    public boolean add(String name) {
-        return false;
-    }
-
-    public boolean delete(String id) {
-        return false;
-    }
-
-    public List<String> all() {
-        return Collections.emptyList();
-    }
-
-    public short countTasks() {
+    public int countTasks() {
         return 1;
     }
 }

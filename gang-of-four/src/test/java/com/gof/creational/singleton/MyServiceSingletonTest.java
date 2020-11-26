@@ -25,11 +25,10 @@ class MyServiceSingletonTest implements WithAssertions {
     @RepeatedTest(value = 3, name = "Request the bean by the {currentRepetition} time")
     @DisplayName("Singleton test")
     void whenRequestInstanceReturnTheSame() {
-        short tasks = 1;
         final MyServiceSingleton service = MyServiceSingleton.getInstance();
         assertThat(service.countTasks())
                 .as("The number of tasks tasks is 1")
-                .isEqualTo(tasks);
+                .isEqualTo(1);
 
         hashCode.add(service.hashCode());
     }
