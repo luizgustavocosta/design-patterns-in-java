@@ -1,8 +1,5 @@
 package com.gof.creational.singleton;
 
-import java.util.Collections;
-import java.util.List;
-
 import static java.util.Objects.isNull;
 
 public final class MyServiceSingleton {
