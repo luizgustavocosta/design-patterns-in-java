@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
-@DisplayName("Quarkus Singleton")
+@DisplayName("Own Singleton")
 class MyServiceSingletonTest implements WithAssertions {
 
     static List<Integer> hashCode = new ArrayList<>();
