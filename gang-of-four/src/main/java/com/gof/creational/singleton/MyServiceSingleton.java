@@ -12,6 +12,7 @@ public final class MyServiceSingleton {
         // Instantiate here if you want a Eager loading
     }
 
+    // Laze way
     public static synchronized MyServiceSingleton getInstance() {
         if (isNull(instance)) {
             instance = new MyServiceSingleton();
