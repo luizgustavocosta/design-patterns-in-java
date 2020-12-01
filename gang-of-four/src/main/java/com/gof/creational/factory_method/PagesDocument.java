@@ -1,29 +1,42 @@
 package com.gof.creational.factory_method;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import org.apache.logging.log4j.util.Strings;
+
 import java.util.List;
 
-public class PagesDocument extends DocumentAttributes implements Document {
+/**
+ * The type Pages document.
+ */
+public class PagesDocument implements Document, TimeHandler {
 
+    private final DocumentAttributes documentAttributes;
+
+    /**
+     * Instantiates a new Pages document.
+     */
     public PagesDocument() {
-        super("untitled.pages",
-                ZonedDateTime.now(ZoneId.of("UTC")).toString(),
-                1L);
+        this.documentAttributes = DocumentAttributes.aBuilder()
+                .withName("untitled.pages")
+                .withLastModified(nowInStringFormat())
+                .build();
     }
 
     @Override
-    public void rename(String newName) {
-
+    public DocumentAttributes rename(String newName) {
+        return DocumentAttributes.aBuilder()
+                .withName(newName)
+                .withLastModified(nowInStringFormat())
+                .withSize(documentAttributes.getSize() + 2)
+                .build();
     }
 
     @Override
     public void delete() {
-
+        throw new IllegalStateException("Documents in this format are not deletable");
     }
 
     @Override
-    public void share(List<String> users) {
-
+    public String share(List<String> users) {
+        return Strings.EMPTY;
     }
 }

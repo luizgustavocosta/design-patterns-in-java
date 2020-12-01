@@ -8,9 +8,9 @@ import java.util.List;
  */
 public interface Document {
 
-    void rename(String newName);
+    DocumentAttributes rename(String newName);
 
     void delete();
 
-    void share(List<String> users);
+    String share(List<String> users);
 }

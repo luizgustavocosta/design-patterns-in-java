@@ -1,5 +1,8 @@
 package com.gof.creational.factory_method;
 
+import java.util.EnumSet;
+import java.util.Objects;
+
 /**
  * The type My application aka ConcreteCreator
  * ConcreteCreator overrides the factory method to return an instance of a ConcreteProduct.
@@ -7,6 +10,7 @@ package com.gof.creational.factory_method;
 public class MyApplication {
 
     public Document getDocument(CloudDocumentProvider provider) {
+        Objects.requireNonNull(provider);
         switch (provider) {
             case GOOGLE:
                 return new GoogleDoc();
@@ -15,8 +19,7 @@ public class MyApplication {
             case MICROSOFT:
                 return new WordDocument();
             default:
-                new NotepadDocument();
+                throw new IllegalArgumentException("The possible value are >>" + EnumSet.allOf(CloudDocumentProvider.class).toString());
         }
-        throw new IllegalStateException("Impossible create a new document");
     }
 }

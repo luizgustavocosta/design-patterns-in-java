@@ -1,30 +1,34 @@
 package com.gof.creational.factory_method;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
  * The type My document aka ConcreteProduct
  * ConcreteProduct implements the Product interface.
  */
-public class GoogleDoc extends DocumentAttributes implements Document {
+public class GoogleDoc implements Document, TimeHandler {
+
+    private DocumentAttributes documentAttributes;
 
     public GoogleDoc() {
-        super("Untitled document",
-                ZonedDateTime.now(ZoneId.of("UTC")).toString(),
-                0L);
+        this.documentAttributes = DocumentAttributes.aBuilder()
+                .withName("Untitled document")
+                .withLastModified(nowInStringFormat())
+                .build();
     }
 
     @Override
-    public void rename(String newName) {
+    public DocumentAttributes rename(String newName) {
+        throw new UnsupportedOperationException("Unsupported");
     }
 
     @Override
     public void delete() {
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public void share(List<String> users) {
+    public String share(List<String> users) {
+        return "The document " + documentAttributes.getName() + " now is shared with you.";
     }
 }
