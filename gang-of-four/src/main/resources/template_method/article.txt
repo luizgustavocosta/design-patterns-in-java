@@ -1,0 +1,41 @@
+classDiagram
+    Document <|-- GoogleDoc :Implements
+    Document <|-- PagesDocument :Implements
+    Document <|-- WordDocument :Implements
+    GoogleDoc --> DocumentAttributes : Uses
+    PagesDocument --> DocumentAttributes : Uses
+    WordDocument --> DocumentAttributes : Uses
+    Application <|-- MyApplication:Inheritance
+    MyApplication ..> Document : Uses
+    Application ..> CloudDocumentProvider: Uses
+    MyApplication ..> CloudDocumentProvider: Uses
+    class Document {
+        <<interface>>
+        +rename(newName) DocummentAttributes
+        +delete()
+        +share(List~string~ users) String
+    }
+    class GoogleDoc {
+    }
+    class PagesDocument {
+    }
+    class WordDocument {
+    }
+    class Application {
+        <<abstract>>
+        +factoryMethod(CloudDocumentProvider) Document
+    }
+    class MyApplication {
+         +factoryMethod(CloudDocumentProvider) Document
+    }
+    class CloudDocumentProvider{
+      <<enumeration>>
+      GOOGLE
+      MICROSOFT
+      APPLE
+    }
+    class DocumentAttributes {
+       -String name
+       -String lastModified
+       -long size
+    }

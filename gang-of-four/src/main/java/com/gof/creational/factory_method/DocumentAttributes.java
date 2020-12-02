@@ -12,7 +12,6 @@ class DocumentAttributes {
 
     protected DocumentAttributes(String name, String lastModified, long size) {
         Objects.requireNonNull(name);
-        Objects.requireNonNull(size);
         this.name = name;
         this.lastModified = lastModified == null ? ZonedDateTime.now(ZoneId.of("UTC")).toString() : lastModified;
         this.size = size;

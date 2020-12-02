@@ -7,9 +7,10 @@ import java.util.Objects;
  * The type My application aka ConcreteCreator
  * ConcreteCreator overrides the factory method to return an instance of a ConcreteProduct.
  */
-public class MyApplication {
+public class MyApplication extends Application {
 
-    public Document getDocument(CloudDocumentProvider provider) {
+    @Override
+    public Document factoryMethod(CloudDocumentProvider provider) {
         Objects.requireNonNull(provider);
         switch (provider) {
             case GOOGLE:

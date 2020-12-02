@@ -37,7 +37,7 @@ class MyApplicationTest implements WithAssertions {
     @MethodSource("forEachType")
     void getDocument(CloudDocumentProvider type, Class clazz) {
         MyApplication myApplication = new MyApplication();
-        final Document document = myApplication.getDocument(type);
+        final Document document = myApplication.factoryMethod(type);
         assertThat(document).as("Should be an instance of " + clazz.getName()).isInstanceOf(clazz);
     }
 

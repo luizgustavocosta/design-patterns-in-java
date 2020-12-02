@@ -1,0 +1,17 @@
+classDiagram
+    Creator <|-- ConcreteCreator :Inheritance
+    Product <|-- ConcreteProduct :Inheritance
+    ConcreteCreator --> ConcreteProduct :association
+    class Product {
+        <<abstract>>
+    }
+    class ConcreteProduct {
+    }
+    class Creator {
+        <<abstract>>
+        +factoryMethod() Product
+        +anOperation() void
+    }
+    class ConcreteCreator {
+         +factoryMethod() Product
+    }
