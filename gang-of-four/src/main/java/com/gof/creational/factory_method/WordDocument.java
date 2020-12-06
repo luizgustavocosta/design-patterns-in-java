@@ -2,10 +2,19 @@ package com.gof.creational.factory_method;
 
 import java.util.List;
 
+/**
+ * The type Word document.
+ */
 public class WordDocument implements Document, TimeHandler {
 
+    /**
+     * The Document attributes.
+     */
     DocumentAttributes documentAttributes;
 
+    /**
+     * Instantiates a new Word document.
+     */
     public WordDocument() {
         this.documentAttributes = DocumentAttributes.aBuilder()
                 .withName("Untitled document")

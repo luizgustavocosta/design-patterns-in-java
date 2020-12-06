@@ -8,9 +8,24 @@ import java.util.List;
  */
 public interface Document {
 
+    /**
+     * Rename document attributes.
+     *
+     * @param newName the new name
+     * @return the document attributes
+     */
     DocumentAttributes rename(String newName);
 
+    /**
+     * Delete.
+     */
     void delete();
 
+    /**
+     * Share string.
+     *
+     * @param users the users
+     * @return the string
+     */
     String share(List<String> users);
 }

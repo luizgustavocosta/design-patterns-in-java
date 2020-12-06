@@ -10,6 +10,9 @@ public class GoogleDoc implements Document, TimeHandler {
 
     private DocumentAttributes documentAttributes;
 
+    /**
+     * Instantiates a new Google doc.
+     */
     public GoogleDoc() {
         this.documentAttributes = DocumentAttributes.aBuilder()
                 .withName("Untitled document")

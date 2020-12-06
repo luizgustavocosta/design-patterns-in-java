@@ -8,6 +8,12 @@ package com.gof.creational.factory_method;
  */
 public abstract class Application {
 
+    /**
+     * Factory method document.
+     *
+     * @param provider the provider
+     * @return the document
+     */
     public Document factoryMethod(CloudDocumentProvider provider) {
         return new GoogleDoc();
     }
