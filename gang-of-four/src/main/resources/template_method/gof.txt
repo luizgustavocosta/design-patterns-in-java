@@ -1,9 +1,9 @@
 classDiagram
     Creator <|-- ConcreteCreator :Inheritance
-    Product <|-- ConcreteProduct :Inheritance
+    Product <|-- ConcreteProduct :Implements
     ConcreteCreator --> ConcreteProduct :association
     class Product {
-        <<abstract>>
+        <<interface>>
     }
     class ConcreteProduct {
     }
