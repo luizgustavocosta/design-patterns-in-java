@@ -1,0 +1,44 @@
+#https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgQ2xpZW50IC0tPiBBYnN0cmFjdEZhY3RvcnlcbiAgICBDbGllbnQgLS0-IEFic3RyYWN0UHJvZHVjdEFcbiAgICBDbGllbnQgLS0-IEFic3RyYWN0UHJvZHVjdEJcblxuICAgIEFic3RyYWN0RmFjdG9yeSA8fC0tIENvbmNyZWF0ZUZhY3RvcnkxIDpJbmhlcml0YW5jZVxuICAgIEFic3RyYWN0RmFjdG9yeSA8fC0tIENvbmNyZWF0ZUZhY3RvcnkyIDpJbmhlcml0YW5jZVxuXG4gICAgXG4gICAgUHJvZHVjdEExIC4ufD4gQWJzdHJhY3RQcm9kdWN0QSA6SW1wbGVtZW50c1xuICAgIFByb2R1Y3RBMiAuLnw-IEFic3RyYWN0UHJvZHVjdEEgOkltcGxlbWVudHNcblxuICAgIFxuICAgIFByb2R1Y3RCMSAuLnw-IEFic3RyYWN0UHJvZHVjdEIgOkltcGxlbWVudHNcbiAgICBQcm9kdWN0QjIgLi58PiBBYnN0cmFjdFByb2R1Y3RCIDpJbXBsZW1lbnRzXG5cbiAgQ29uY3JlYXRlRmFjdG9yeTEgLS0-IFByb2R1Y3RBMTp1c2VzXG4gIENvbmNyZWF0ZUZhY3RvcnkxIC0tPiBQcm9kdWN0QjE6dXNlc1xuXG4gIENvbmNyZWF0ZUZhY3RvcnkyIC0tPiBQcm9kdWN0QTI6dXNlc1xuICBDb25jcmVhdGVGYWN0b3J5MiAtLT4gUHJvZHVjdEIyOnVzZXNcblxuICAgIGNsYXNzIEFic3RyYWN0UHJvZHVjdEIge1xuICAgICAgPDxpbnRlcmZhY2U-PlxuICAgIH1cbiAgICBjbGFzcyBBYnN0cmFjdFByb2R1Y3RBIHtcbiAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICB9XG4gICAgXG4gICAgY2xhc3MgQWJzdHJhY3RGYWN0b3J5IHtcbiAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICtjcmVhdGVQcm9kdWN0QSgpXG4gICAgICArY3JlYXRlUHJvZHVjdEIoKVxuICAgIH1cbiAgICBjbGFzcyBDb25jcmVhdGVGYWN0b3J5MSB7XG4gICAgICArY3JlYXRlUHJvZHVjdEEoKVxuICAgICAgK2NyZWF0ZVByb2R1Y3RCKClcbiAgICB9XG4gICAgY2xhc3MgQ29uY3JlYXRlRmFjdG9yeTIge1xuICAgICAgK2NyZWF0ZVByb2R1Y3RBKClcbiAgICAgICtjcmVhdGVQcm9kdWN0QigpXG4gICAgfVxuICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ
+
+classDiagram
+    Client --> AbstractFactory
+    Client --> AbstractProductA
+    Client --> AbstractProductB
+
+    AbstractFactory <|-- ConcreateFactory1 :Inheritance
+    AbstractFactory <|-- ConcreateFactory2 :Inheritance
+
+
+    ProductA1 ..|> AbstractProductA :Implements
+    ProductA2 ..|> AbstractProductA :Implements
+
+
+    ProductB1 ..|> AbstractProductB :Implements
+    ProductB2 ..|> AbstractProductB :Implements
+
+    ConcreateFactory1 --> ProductA1:uses
+    ConcreateFactory1 --> ProductB1:uses
+
+    ConcreateFactory2 --> ProductA2:uses
+    ConcreateFactory2 --> ProductB2:uses
+
+    class AbstractProductB {
+      <<interface>>
+    }
+    class AbstractProductA {
+      <<interface>>
+    }
+
+    class AbstractFactory {
+      <<interface>>
+      +createProductA()
+      +createProductB()
+    }
+    class ConcreateFactory1 {
+      +createProductA()
+      +createProductB()
+    }
+    class ConcreateFactory2 {
+      +createProductA()
+      +createProductB()
+    }
