@@ -1,0 +1,45 @@
+classDiagram
+    Client --> AbstractFactory
+    Client --> OperationalSystem
+    Client --> OfficeSuite
+
+    AbstractFactory <|-- MacFactory :Inheritance
+    AbstractFactory <|-- WindowsFactory :Inheritance
+
+    Access ..|> MicrosoftOffice :Implements
+    Word ..|> MicrosoftOffice :Implements
+    Excel ..|> MicrosoftOffice :Implements
+    PowerPoint ..|> MicrosoftOffice :Implements
+
+    Keynote ..|> ICloud :Implements
+    Numbers ..|> ICloud :Implements
+    Pages ..|> ICloud :Implements
+
+    ConcreateFactory1 --> ProductA1:uses
+    ConcreateFactory1 --> ProductB1:uses
+
+    ConcreateFactory2 --> ProductA2:uses
+    ConcreateFactory2 --> ProductB2:uses
+
+    class AbstractProductB {
+      <<interface>>
+    }
+    class AbstractProductA {
+      <<interface>>
+    }
+
+    class AbstractFactory {
+      <<interface>>
+      +getLicense() License
+      +getSoftwares() List~String~
+      +getPrice() BigDecimal
+      +releaseNotes() String
+    }
+    class ConcreateFactory1 {
+      +createProductA()
+      +createProductB()
+    }
+    class ConcreateFactory2 {
+      +createProductA()
+      +createProductB()
+    }
