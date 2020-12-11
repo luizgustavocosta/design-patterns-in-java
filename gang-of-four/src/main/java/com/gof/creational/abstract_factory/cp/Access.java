@@ -1,24 +1,21 @@
 package com.gof.creational.abstract_factory.cp;
 
+import com.gof.creational.abstract_factory.Devices;
 import com.gof.creational.abstract_factory.ap.MicrosoftOffice;
 
-import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.Set;
 
 public class Access implements MicrosoftOffice {
 
     @Override
-    public Set<String> allowedDevices() {
-        return null;
+    public Set<Devices> allowedDevices() {
+        return Collections.singleton(Devices.COMPUTER);
     }
 
     @Override
-    public Set<String> exportAs() {
-        return null;
-    }
-
-    @Override
-    public BigDecimal price() {
-        return BigDecimal.ONE;
+    public String print() {
+        return "Microsoft Access is a database management system from Microsoft that combines the relational Microsoft " +
+                "Jet Database Engine with a graphical user interface and software-development tools";
     }
 }

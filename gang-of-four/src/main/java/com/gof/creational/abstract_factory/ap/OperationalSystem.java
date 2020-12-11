@@ -14,13 +14,13 @@ public interface OperationalSystem {
     String sourceModel();
 
     default String releaseNotes() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\nThank you by order the new "+osFamily());
-        builder.append("\nThis computer has the OS written in "+writtenIn());
-        builder.append("\nOS source model => "+sourceModel());
-        builder.append("\nHistory.....");
-        builder.append("\nThis first version of this OS was launched in "+initialReleaseDate());
-        return builder.toString();
+        return new StringBuilder()
+                .append("\nThank you by order the new " + osFamily())
+                .append("\nThis computer has the OS written in " + writtenIn())
+                .append("\nOS source model => " + sourceModel())
+                .append("\nHistory.....")
+                .append("\nThis first version of this OS was launched in " + initialReleaseDate())
+                .toString();
     }
 
 }

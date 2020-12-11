@@ -3,12 +3,13 @@ package com.gof.creational.abstract_factory.cf;
 import com.gof.creational.abstract_factory.AbstractFactory;
 import com.gof.creational.abstract_factory.ap.OfficeSuite;
 import com.gof.creational.abstract_factory.ap.OperationalSystem;
-import com.gof.creational.abstract_factory.ap.Report;
-import com.gof.creational.abstract_factory.cp.*;
+import com.gof.creational.abstract_factory.cp.Keynote;
+import com.gof.creational.abstract_factory.cp.MacOS;
+import com.gof.creational.abstract_factory.cp.Numbers;
+import com.gof.creational.abstract_factory.cp.Pages;
 import com.gof.creational.abstract_factory.license.License;
-import com.gof.creational.abstract_factory.license.Paid;
+import com.gof.creational.abstract_factory.license.Proprietary;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,23 +26,17 @@ public class MacFactory implements AbstractFactory {
         return operationalSystem;
     }
 
+    @Override
     public License createLicense() {
-        return new Paid();
+        return new Proprietary();
     }
 
+    @Override
     public List<OfficeSuite> createOfficeSuite() {
         return Arrays.asList(
                 new Pages(),
                 new Numbers(),
                 new Keynote());
 
-    }
-
-    public BigDecimal calculatePrice() {
-        return new BigDecimal(42);
-    }
-
-    public Report createOrderReport() {
-        return new MacReport(operationalSystem);
     }
 }

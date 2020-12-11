@@ -1,7 +1,8 @@
 classDiagram
     Client --> AbstractFactory
-    Client --> OperationalSystem
+    Client --> License
     Client --> OfficeSuite
+    Client --> OperationalSystem
 
     AbstractFactory <|-- MacFactory :Inheritance
     AbstractFactory <|-- WindowsFactory :Inheritance
@@ -11,35 +12,45 @@ classDiagram
     Excel ..|> MicrosoftOffice :Implements
     PowerPoint ..|> MicrosoftOffice :Implements
 
-    Keynote ..|> ICloud :Implements
-    Numbers ..|> ICloud :Implements
-    Pages ..|> ICloud :Implements
+    IWork --|> OfficeSuite
+    MicrosoftOffice --|> OfficeSuite
 
-    ConcreateFactory1 --> ProductA1:uses
-    ConcreateFactory1 --> ProductB1:uses
+    Keynote ..|> IWork :Implements
+    Numbers ..|> IWork :Implements
+    Pages ..|> IWork :Implements
 
-    ConcreateFactory2 --> ProductA2:uses
-    ConcreateFactory2 --> ProductB2:uses
+    MacFactory ..> OperationalSystem
+    MacFactory ..> License
+    MacFactory ..> OfficeSuite
 
-    class AbstractProductB {
-      <<interface>>
-    }
-    class AbstractProductA {
-      <<interface>>
-    }
+    WindowsFactory ..> OperationalSystem
+    WindowsFactory ..> License
+    WindowsFactory ..> OfficeSuite
+
+    MacOS ..> OperationalSystem
+    Windows10 ..> OperationalSystem
+
+    Freeware ..> License
+    Proprietary ..> License
 
     class AbstractFactory {
       <<interface>>
-      +getLicense() License
-      +getSoftwares() List~String~
-      +getPrice() BigDecimal
-      +releaseNotes() String
+      +createOperationalSystem() OperationalSystem
+      +createLicense() License
+      +createOfficeSuite() List~String~
     }
-    class ConcreateFactory1 {
-      +createProductA()
-      +createProductB()
+    class OfficeSuite {
+      <<interface>>
     }
-    class ConcreateFactory2 {
-      +createProductA()
-      +createProductB()
+    class IWork {
+      <<interface>>
+    }
+    class MicrosoftOffice {
+      <<interface>>
+    }
+    class OperationalSystem {
+      <<interface>>
+    }
+    class License {
+      <<interface>>
     }

@@ -1,9 +1,12 @@
 package com.gof.creational.abstract_factory.ap;
 
-import java.math.BigDecimal;
+import com.gof.creational.abstract_factory.Devices;
+
+import java.util.Set;
 
 public interface OfficeSuite {
 
-    BigDecimal price();
+    Set<Devices> allowedDevices();
+
     String print();
 }

@@ -4,11 +4,11 @@ import com.gof.creational.abstract_factory.FormatLocalDateAndTime;
 
 import java.time.LocalDateTime;
 
-public class Paid implements License {
+public class Proprietary implements License {
 
     @Override
     public String name() {
-        return "Paid";
+        return "Proprietary";
     }
 
     @Override

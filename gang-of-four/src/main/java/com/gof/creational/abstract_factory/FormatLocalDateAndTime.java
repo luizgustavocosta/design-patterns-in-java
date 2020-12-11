@@ -15,7 +15,7 @@ public class FormatLocalDateAndTime {
         Objects.requireNonNull(localDateTime);
         String pattern = "EEEE, dd MMMM yyyy 'at' HH:mm";
         Locale locale = Locale.ENGLISH;
-        final DateTimeFormatter dateTimeFormatter =  DateTimeFormatter.ofPattern(pattern, locale);
+        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern, locale);
         return dateTimeFormatter.format(localDateTime);
     }
 }

@@ -1,7 +1,5 @@
 package com.gof.creational.abstract_factory.license;
 
-import java.util.Optional;
-
 public class CreativeCommons implements License {
 
     @Override

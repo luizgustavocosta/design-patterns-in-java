@@ -1,12 +1,11 @@
 package com.gof.creational.abstract_factory.cp;
 
 import com.gof.creational.abstract_factory.Devices;
-import com.gof.creational.abstract_factory.ap.ICloud;
+import com.gof.creational.abstract_factory.ap.IWork;
 
-import java.math.BigDecimal;
 import java.util.Set;
 
-public class Keynote implements ICloud {
+public class Keynote implements IWork {
 
     @Override
     public Set<Devices> allowedDevices() {
@@ -14,7 +13,7 @@ public class Keynote implements ICloud {
     }
 
     @Override
-    public BigDecimal price() {
-        return null;
+    public String print() {
+        return "Keynote is a presentation software application developed as a part of the iWork productivity suite by Apple Inc.";
     }
 }
