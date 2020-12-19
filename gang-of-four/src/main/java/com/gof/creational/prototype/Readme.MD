@@ -1,5 +1,15 @@
 ## Prototype
 
+## When to use?
+Use this pattern when creating an instance of given a class is either expensive or complicated.[1]
+
+## Advantages
+Hides the complexities of making new instances
+
+Provides an option for the client to generate objects whose type is unknown.[1]
+
+## Drawback
+Sometimes make the copy could be complicated.[1]
 
 ### Model
 
@@ -21,3 +31,13 @@ GIT OBJECT TYPES
 At the heart of Git’s repository implementation is the object store. It contains your original data files and all the log messages, author information, dates, and other information required to rebuild any version or branch of the project.
 
 Git places only four types of objects in the object store: the blobs, trees, commits, and tags. These four atomic objects form the foundation of Git’s higher level data structures.
+
+
+Git clone
+The git clone command creates a new Git repository based on the original you specify via a filesystem or network address. Git doesn’t have to copy all the information in the original to the clone. Instead, Git ignores information that is pertinent only to the original repository, such as remote-tracking branches.
+
+Git objects
+https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
+
+Model example
+https://astahblog.com/2015/09/08/git-data-model/
