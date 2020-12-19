@@ -1,0 +1,15 @@
+classDiagram
+    Client --> Prototype
+    Prototype <|-- ConcretePrototype1 :Inheritance
+    Prototype <|-- ConcretePrototype2 :Inheritance
+
+    class Prototype {
+      <<interface>>
+      +clone() Prototype
+    }
+    class ConcretePrototype1 {
+      +clone() ConcretePrototype1
+    }
+    class ConcretePrototype2 {
+      +clone() ConcretePrototype2
+    }

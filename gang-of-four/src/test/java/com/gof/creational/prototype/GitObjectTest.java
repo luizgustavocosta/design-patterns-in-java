@@ -1,18 +1,18 @@
 package com.gof.creational.prototype;
 
+import org.assertj.core.api.WithAssertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GitObjectTest {
+class GitObjectTest implements WithAssertions {
 
+    @DisplayName("Prototype of GitObject")
     @Test
-    void addCommit() {
-
+    void whenAPrototypeIsRequestThenClone() {
         GitObject gitObject = new GitObject();
-        System.out.println(gitObject);
-        final Object prototype = gitObject.prototype();
-        System.out.println(prototype);
-
+        final GitObject prototype = gitObject.prototype();
+        assertThat(gitObject).as("The objects should be equals").isEqualToComparingFieldByField(prototype);
     }
 }

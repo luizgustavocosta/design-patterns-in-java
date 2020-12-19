@@ -1,5 +1,10 @@
 ## Prototype
 
+## Disclaimer
+This is a Sonar Issue
+
+https://www.artima.com/intv/bloch.html#part13
+
 ## When to use?
 Use this pattern when creating an instance of given a class is either expensive or complicated.[1]
 

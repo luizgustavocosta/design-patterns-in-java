@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Represents the ConcretePrototype
+ */
 public class Repository implements ConfigurationSettings, Prototype {
 
     private final String id;
@@ -76,7 +79,7 @@ public class Repository implements ConfigurationSettings, Prototype {
     @Override
     public Repository prototype() {
         try {
-            return (Repository) this.clone();
+            return (Repository) super.clone();
         } catch (CloneNotSupportedException exception) {
             throw new UnsupportedOperationException("The prototype operation failed.");
         }

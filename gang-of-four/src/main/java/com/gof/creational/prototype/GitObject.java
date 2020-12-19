@@ -1,6 +1,7 @@
 package com.gof.creational.prototype;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -35,6 +36,20 @@ public class GitObject implements Prototype {
         } catch (CloneNotSupportedException e) {
             throw new UnsupportedOperationException("Prototype not supported.");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GitObject gitObject = (GitObject) o;
+        return Objects.equals(id, gitObject.id) &&
+                Objects.equals(commits, gitObject.commits);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, commits);
     }
 
     @Override

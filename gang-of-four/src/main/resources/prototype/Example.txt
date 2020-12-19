@@ -1,0 +1,40 @@
+//https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgQ2xpZW50IC0tPiBQcm90b3R5cGVcbiAgICBDbG9uZWFibGUgPHwtLSBQcm90b3R5cGU6SW5oZXJpdGFuY2VcbiAgICBQcm90b3R5cGUgPHwuLiBHaXRPYmplY3QgOkltcGxlbWVudHNcbiAgICBQcm90b3R5cGUgPHwuLiBSZXBvc2l0b3J5IDpJbXBsZW1lbnRzXG4gICAgR2l0T2JqZWN0IC0tPiBDb21taXQ6RGVwZW5kc1xuICAgIFJlcG9zaXRvcnkgLS0-IFJlZmVyZW5jZXM6RGVwZW5kc1xuICAgIFJlcG9zaXRvcnkgLS0-IEdpdE9iamVjdDpEZXBlbmRzXG4gICAgY2xhc3MgUHJvdG90eXBlIHtcbiAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICtwcm90b3R5cGUoKSBQcm90b3R5cGVcbiAgICB9XG4gICAgY2xhc3MgR2l0T2JqZWN0IHtcbiAgICAgIC1TdHJpbmcgaWRcbiAgICAgIC1TZXR-Q29tbWl0fiBjb21taXRzXG4gICAgICArcHJvdG90eXBlKCkgR2l0T2JqZWN0XG4gICAgICArdG9TdHJpbmcoKSBTdHJpbmdcbiAgICAgICtlcXVhbHMoKSBib29sZWFuXG4gICAgfVxuICAgIGNsYXNzIFJlcG9zaXRvcnkge1xuICAgICAgLVN0cmluZyBpZFxuICAgICAgLVN0cmluZyBvd25lclxuICAgICAgLVN0cmluZyBkZXNjcmlwdGlvblxuICAgICAgLVZpc2liaWxpdHkgdmlzaWJpbGl0eVxuICAgICAgLUxpc3R-R2l0T2JqZWN0c34gZ2l0T2JqZWN0c1xuICAgICAgLUxpc3R-UmVmZXJlbmNlc34gcmVmZXJlbmNlc1xuICAgICAgK3Byb3RvdHlwZSgpIEdpdE9iamVjdFxuICAgICAgK3RvU3RyaW5nKCkgU3RyaW5nXG4gICAgICArZXF1YWxzKCkgYm9vbGVhblxuICAgIH1cbiAgICBjbGFzcyBSZWZlcmVuY2VzIHtcbiAgICAgIC1TdHJpbmcgaWRcbiAgICAgIC1TdHJpbmcgbmFtZVxuICAgIH1cbiAgICBjbGFzcyBDb21taXQge1xuICAgICAgLWNvbW1pdERhdGUgWm9uZWREYXRlVGltZVxuICAgICAgLVN0cmluZyBhdXRob3JcbiAgICAgIC1TdHJpbmcgY29tbWVudFxuICAgIH1cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9
+classDiagram
+    Client --> Prototype
+    Cloneable <|-- Prototype:Inheritance
+    Prototype <|.. GitObject :Implements
+    Prototype <|.. Repository :Implements
+    GitObject --> Commit:Depends
+    Repository --> References:Depends
+    Repository --> GitObject:Depends
+    class Prototype {
+      <<interface>>
+      +prototype() Prototype
+    }
+    class GitObject {
+      -String id
+      -Set~Commit~ commits
+      +prototype() GitObject
+      +toString() String
+      +equals() boolean
+    }
+    class Repository {
+      -String id
+      -String owner
+      -String description
+      -Visibility visibility
+      -List~GitObjects~ gitObjects
+      -List~References~ references
+      +prototype() GitObject
+      +toString() String
+      +equals() boolean
+    }
+    class References {
+      -String id
+      -String name
+    }
+    class Commit {
+      -commitDate ZonedDateTime
+      -String author
+      -String comment
+    }

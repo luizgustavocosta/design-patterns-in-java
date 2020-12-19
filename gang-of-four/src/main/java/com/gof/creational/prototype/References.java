@@ -3,7 +3,7 @@ package com.gof.creational.prototype;
 
 import java.util.UUID;
 
-public class References implements Prototype {
+public class References {
 
     private final String id;
     private final String name;
@@ -19,15 +19,6 @@ public class References implements Prototype {
 
     public String getName() {
         return name;
-    }
-
-    @Override
-    public References prototype() {
-        try {
-            return (References) this.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new UnsupportedOperationException("Prototype not supported.");
-        }
     }
 
     @Override
