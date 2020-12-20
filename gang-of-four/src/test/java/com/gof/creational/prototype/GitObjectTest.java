@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Git Object prototype test")
 class GitObjectTest implements WithAssertions {
 
     @DisplayName("Prototype of GitObject")

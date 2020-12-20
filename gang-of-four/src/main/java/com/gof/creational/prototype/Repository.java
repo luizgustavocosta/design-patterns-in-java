@@ -32,6 +32,35 @@ public class Repository implements ConfigurationSettings, Prototype {
         this.gitObjects = gitObjects;
     }
 
+    @Override
+    public Repository prototype() {
+        try {
+            return (Repository) super.clone();
+        } catch (CloneNotSupportedException exception) {
+            throw new UnsupportedOperationException("The prototype operation failed.");
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Repository that = (Repository) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(owner, that.owner) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description) &&
+                visibility == that.visibility &&
+                Objects.equals(gitObjects, that.gitObjects) &&
+                Objects.equals(references, that.references);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, owner, name, description, visibility, gitObjects, references);
+    }
+
+
     public String getName() {
         return name;
     }
@@ -76,33 +105,7 @@ public class Repository implements ConfigurationSettings, Prototype {
         return visibility;
     }
 
-    @Override
-    public Repository prototype() {
-        try {
-            return (Repository) super.clone();
-        } catch (CloneNotSupportedException exception) {
-            throw new UnsupportedOperationException("The prototype operation failed.");
-        }
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Repository that = (Repository) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(owner, that.owner) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(description, that.description) &&
-                visibility == that.visibility &&
-                Objects.equals(gitObjects, that.gitObjects) &&
-                Objects.equals(references, that.references);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, owner, name, description, visibility, gitObjects, references);
-    }
 
     @Override
     public String toString() {

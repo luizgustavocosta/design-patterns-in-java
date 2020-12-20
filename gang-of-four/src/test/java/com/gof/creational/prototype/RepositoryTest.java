@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+@DisplayName("Repository prototype test")
 class RepositoryTest implements WithAssertions {
 
     private static GitObject createFakeGitObject(String author, String comment) {
@@ -19,6 +20,7 @@ class RepositoryTest implements WithAssertions {
         return gitObject;
 
     }
+
 
     @DisplayName("Prototype of Repository")
     @Test

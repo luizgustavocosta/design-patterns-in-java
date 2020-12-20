@@ -24,5 +24,4 @@ public class Client {
         logger.log(Level.INFO, () -> "Are they equals (false) (true) ? " + repository.equals(myClonedRepository));
 
     }
-
 }
