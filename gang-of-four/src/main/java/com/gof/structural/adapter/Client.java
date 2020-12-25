@@ -16,6 +16,6 @@ public class Client {
         USB usb = new USB();
         final Output output = adapter.request(usb);
 
-        logger.log(Level.INFO, output.description());
+        logger.log(Level.INFO, output::description);
     }
 }

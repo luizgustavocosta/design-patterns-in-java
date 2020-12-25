@@ -5,6 +5,8 @@ package com.gof.structural.adapter;
  */
 public class Adapter implements Target<Output, Input> {
 
+    private Input input;
+
     @Override
     public <T> T request(Input input) {
         return (T) new USBC();
