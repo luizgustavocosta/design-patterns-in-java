@@ -3,7 +3,9 @@ package com.gof.structural.adapter;
 /**
  * Defines an existing interface that needs adapting.
  */
-public class Adaptee {
+public class Adaptee<T> {
 
-    void specificRequest() {}
+    T specificRequest() {
+        throw new UnsupportedOperationException();
+    }
 }
