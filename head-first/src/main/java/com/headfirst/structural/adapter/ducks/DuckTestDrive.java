@@ -1,8 +1,8 @@
-package com.headfirst.behavioral.adapter.ducks;
+package com.headfirst.structural.adapter.ducks;
 
-import com.headfirst.behavioral.adapter.ducks.challenge.Drone;
-import com.headfirst.behavioral.adapter.ducks.challenge.DroneAdapter;
-import com.headfirst.behavioral.adapter.ducks.challenge.SuperDrone;
+import com.headfirst.structural.adapter.ducks.challenge.Drone;
+import com.headfirst.structural.adapter.ducks.challenge.DroneAdapter;
+import com.headfirst.structural.adapter.ducks.challenge.SuperDrone;
 
 public class DuckTestDrive {
 	public static void main(String[] args) {

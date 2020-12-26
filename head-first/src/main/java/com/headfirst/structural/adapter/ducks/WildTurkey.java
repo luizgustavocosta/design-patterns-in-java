@@ -1,4 +1,4 @@
-package com.headfirst.behavioral.adapter.ducks;
+package com.headfirst.structural.adapter.ducks;
 
 public class WildTurkey implements Turkey {
 	public void gobble() {

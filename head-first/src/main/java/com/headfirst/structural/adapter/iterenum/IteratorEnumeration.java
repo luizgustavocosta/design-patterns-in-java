@@ -1,4 +1,4 @@
-package com.headfirst.behavioral.adapter.iterenum;
+package com.headfirst.structural.adapter.iterenum;
 
 import java.util.*;
 

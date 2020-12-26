@@ -1,4 +1,4 @@
-package com.headfirst.behavioral.adapter.ducks.challenge;
+package com.headfirst.structural.adapter.ducks.challenge;
 
 public interface Drone {
 	public void beep();

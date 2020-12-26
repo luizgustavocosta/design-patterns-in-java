@@ -1,4 +1,4 @@
-package com.headfirst.behavioral.adapter.ducks;
+package com.headfirst.structural.adapter.ducks;
 
 public class TurkeyTestDrive {
 	public static void main(String[] args) {

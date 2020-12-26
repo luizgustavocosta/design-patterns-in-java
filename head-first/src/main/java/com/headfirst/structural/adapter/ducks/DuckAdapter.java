@@ -1,4 +1,4 @@
-package com.headfirst.behavioral.adapter.ducks;
+package com.headfirst.structural.adapter.ducks;
 import java.util.Random;
 
 public class DuckAdapter implements Turkey {

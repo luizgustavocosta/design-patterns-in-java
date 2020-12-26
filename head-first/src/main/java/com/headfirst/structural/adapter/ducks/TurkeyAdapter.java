@@ -1,4 +1,4 @@
-package com.headfirst.behavioral.adapter.ducks;
+package com.headfirst.structural.adapter.ducks;
 
 public class TurkeyAdapter implements Duck {
 	Turkey turkey;

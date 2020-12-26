@@ -5,7 +5,7 @@ package com.gof.structural.adapter;
  * T Type
  * E Element
  */
-public interface Target<T, E> {
+public interface Target<E> {
 
     <T>T request(E element);
 }

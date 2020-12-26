@@ -1,7 +1,7 @@
-package com.headfirst.behavioral.adapter.ducks.challenge;
+package com.headfirst.structural.adapter.ducks.challenge;
 
 
-import com.headfirst.behavioral.adapter.ducks.Duck;
+import com.headfirst.structural.adapter.ducks.Duck;
 
 public class DroneAdapter implements Duck {
 	Drone drone;
