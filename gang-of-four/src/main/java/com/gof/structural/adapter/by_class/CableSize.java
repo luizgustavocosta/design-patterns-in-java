@@ -1,6 +1,7 @@
 package com.gof.structural.adapter.by_class;
 
-public interface Target {
+public enum CableSize {
 
-    void request();
+    REGULAR,
+    MINI
 }
