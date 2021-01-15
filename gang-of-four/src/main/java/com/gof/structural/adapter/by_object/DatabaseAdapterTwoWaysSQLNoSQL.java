@@ -5,9 +5,6 @@ import java.util.List;
 public class DatabaseAdapterTwoWaysSQLNoSQL implements SQL, NoSQL {
 
 
-
-
-
     @Override
     public void insertOne(String document) {
 
