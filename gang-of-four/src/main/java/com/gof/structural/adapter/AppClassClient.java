@@ -1,12 +1,16 @@
 package com.gof.structural.adapter;
 
-import com.gof.structural.adapter.by_class.AdapterLowToHigh;
+import com.gof.structural.adapter.object.AdapterLowToHigh;
+import org.jboss.logmanager.Level;
+
+import java.util.logging.Logger;
 
 /**
  * The type App class client.
  */
 public class AppClassClient {
 
+    private static final Logger logger = Logger.getLogger(AppClassClient.class.getName());
 
     /**
      * The entry point of application.
@@ -18,9 +22,9 @@ public class AppClassClient {
         final boolean connected = new AdapterLowToHigh().connect();
 
         if (connected) {
-            System.out.println("The connection between RCA and HDMI has been established");
+            logger.log(Level.INFO,"The connection between RCA and HDMI has been established");
         } else {
-            System.err.println("Fail to connect RCA and HDMI");
+            logger.log(Level.ERROR, "Fail to connect RCA and HDMI");
         }
     }
 }

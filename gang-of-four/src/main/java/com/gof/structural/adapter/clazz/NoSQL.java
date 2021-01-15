@@ -1,4 +1,4 @@
-package com.gof.structural.adapter.by_object;
+package com.gof.structural.adapter.clazz;
 
 import java.util.List;
 

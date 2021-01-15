@@ -1,4 +1,4 @@
-package com.gof.structural.adapter.by_class;
+package com.gof.structural.adapter.object;
 
 public enum CableSize {
 
