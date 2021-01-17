@@ -2,11 +2,16 @@ package com.gof.structural.adapter;
 
 import com.gof.structural.adapter.object.*;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class AppObjectClient {
 
-//    private static final Logger logger = Logger.getLogger(AppObjectClient.class.getName());
+    private static final Logger logger = Logger.getLogger(AppObjectClient.class.getName());
 
     public static void main(String[] args) {
+
+        logger.log(Level.INFO, "Starting the Adapter pattern");
 
         TV crtTV = CathodeRayTube.CathodeRayTubeBuilder.aCathodeRayTube()
                 .withVideoInput(RCA.getInstance())
