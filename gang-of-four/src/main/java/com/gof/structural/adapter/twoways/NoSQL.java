@@ -1,4 +1,4 @@
-package com.gof.structural.adapter.clazz;
+package com.gof.structural.adapter.twoways;
 
 import java.util.List;
 
