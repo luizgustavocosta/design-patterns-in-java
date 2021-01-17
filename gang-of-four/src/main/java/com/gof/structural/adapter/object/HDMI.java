@@ -2,13 +2,17 @@ package com.gof.structural.adapter.object;
 
 import java.util.Objects;
 
-public class HDMI implements ConnectorPort {
+public class HDMI implements HDMIPort {
 
     private final String name;
 
-    public HDMI(String name) {
-        this.name = name;
+    private static final HDMI INSTANCE = new HDMI();
+
+    private HDMI() {
+        this.name = "HDMI";
     }
+
+    public static HDMI getInstance() { return INSTANCE; }
 
     @Override
     public String name() {

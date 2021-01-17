@@ -1,47 +1,45 @@
 package com.gof.structural.adapter;
 
 import com.gof.structural.adapter.object.*;
-import com.gof.structural.adapter.twoways.CathodeRayTube;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class AppObjectClient {
 
-    private static final Logger logger = Logger.getLogger(AppObjectClient.class.getName());
+//    private static final Logger logger = Logger.getLogger(AppObjectClient.class.getName());
 
     public static void main(String[] args) {
 
-        TV vintageTV = CathodeRayTube.CathodeRayTubeBuilder.aCathodeRayTube()
-                .withVideoInput(new RCA("Philips Digital Interconnect Format"))
-                .withScreenType("CRT")
+        TV crtTV = CathodeRayTube.CathodeRayTubeBuilder.aCathodeRayTube()
+                .withVideoInput(RCA.getInstance())
                 .withName("Vintage tv")
                 .build();
 
-        Console playstation5 = Console.aBuilder()
+        TV qLedTV = QuantumLightEmittingDiode.QuantumLightEmittingDiodeBuilder.aQuantumLightEmittingDiode()
+                .withInput(HDMIInput.HDMIInputBuilder.aHDMIInput()
+                        .withConnectors(3)
+                        .withName("HDMI")
+                        .withSpeed("100")
+                        .build())
+                .withName("Samsung Q80/Q80T QLED")
+                .build();
+
+        Console ps5 = Console.aBuilder()
                 .withName("PS 5")
                 .withManufacturer("Sony")
                 .withProductFamily("Playstation")
-                .withVideoOutput(new HDMI("High speed 2.1"))
+                .withVideoOutput(HDMI.getInstance())
                 .build();
 
-        Console playstation1 = Console.aBuilder()
-                .withName("Play 1")
+        Console ps1 = Console.aBuilder()
+                .withName("PS 1")
                 .withManufacturer("Sony")
                 .withProductFamily("Playstation")
-                .withVideoOutput(new RCA("Sony RCA Cables"))
+                .withVideoOutput(RCA.getInstance())
                 .build();
 
-        logConnection(PlugAndPlay.connect(vintageTV, playstation5), vintageTV, playstation5);
-        logConnection(PlugAndPlay.connect(vintageTV, playstation1), vintageTV, playstation1);
+        PlugAndPlay.connect(crtTV, ps1);
+        PlugAndPlay.connect(qLedTV, ps5);
+        PlugAndPlay.connect(qLedTV, ps1);
+        PlugAndPlay.connect(crtTV, ps5);
 
-    }
-
-    private static void logConnection(boolean result, TV tv, Console console) {
-        if (result) {
-            logger.log(Level.INFO, "The connection the TV and the Console has been established");
-        } else {
-            logger.log(Level.WARNING, () -> "Fail to connect the TV {'" + tv.name() + "'}, and the Console {'" + console.name() + "'}");
-        }
     }
 }

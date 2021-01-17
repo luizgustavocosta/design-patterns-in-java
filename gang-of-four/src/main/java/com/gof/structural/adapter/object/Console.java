@@ -5,12 +5,12 @@ public class Console {
     private final String manufacturer;
     private final String name;
     private final String productFamily;
-    private final ConnectorPort videoOutput;
+    private final ConnectorPort output;
 
-    private Console(String manufacturer, String productFamily, ConnectorPort videoOutput, String name) {
+    private Console(String manufacturer, String productFamily, ConnectorPort output, String name) {
         this.manufacturer = manufacturer;
         this.productFamily = productFamily;
-        this.videoOutput = videoOutput;
+        this.output = output;
         this.name = name;
     }
 
@@ -30,8 +30,8 @@ public class Console {
         return this.name;
     }
 
-    public ConnectorPort getVideoOutput() {
-        return videoOutput;
+    public ConnectorPort getOutput() {
+        return output;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Console {
                 "manufacturer='" + manufacturer + '\'' +
                 ", name='" + name + '\'' +
                 ", productFamily='" + productFamily + '\'' +
-                ", videoOutput=" + videoOutput +
+                ", videoOutput=" + output +
                 '}';
     }
 

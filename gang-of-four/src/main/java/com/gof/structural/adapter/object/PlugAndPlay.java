@@ -12,20 +12,27 @@ public class PlugAndPlay {
         throw new IllegalCallerException("Private constructor");
     }
 
-    public static boolean connect(TV tv, Console console) {
+    public static void connect(TV tv, Console console) {
+
         Objects.requireNonNull(tv, "The tv is required");
         Objects.requireNonNull(console, "The console is required");
 
-        if (tv.videoInput().getClass().isInstance(console.getVideoOutput())) {
-            logger.log(Level.INFO, "Equals. Adapter not required");
+        if (tv.getInput().name().equals(console.getOutput().name())) {
+            logger.log(Level.INFO, () -> "Tv " + tv.name() + ", and Console " + console.name() + " " +
+                    "has the same interface. No adapter required.");
         } else {
-            logger.log(Level.INFO, () -> "Not Equals. Lets call the adapter for a old TV");
-
-            final ConnectorPort videoOutput = console.getVideoOutput();
-            if (videoOutput instanceof HDMI) {
-                return new HDMIAdapter((HDMI) videoOutput).ready();
+            logger.log(Level.INFO, () -> "Let's try connect different interfaces..");
+            final ConnectorPort output = console.getOutput();
+            if (output instanceof HDMI) {
+                final boolean receivingSignal = new HDMIAdapter((HDMI) output).receiveSignal();
+                if (receivingSignal) {
+                    logger.log(Level.INFO, () -> "Tv " + tv.name() + ", and Console " + console.name() + " " +
+                            "connected by an Adapter");
+                } else {
+                    logger.log(Level.WARNING, () -> "Please, change your Tv " + tv.name() + ", or the  Console " + console.name() + " " +
+                            "to a known interface");
+                }
             }
         }
-        return true;
     }
 }

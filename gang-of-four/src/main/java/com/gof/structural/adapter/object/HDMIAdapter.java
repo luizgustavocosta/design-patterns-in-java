@@ -10,7 +10,7 @@ public class HDMIAdapter implements RCAConnector {
 
     @Override
     public String name() {
-        return "HDMI";
+        return hdmi.name();
     }
 
     @Override
@@ -19,9 +19,9 @@ public class HDMIAdapter implements RCAConnector {
     }
 
     @Override
-    public boolean ready() {
-        // Electronic tasks here to convert the signal
+    public boolean receiveSignal() {
+        // Electronic tasks here to convert the signal HDMI to RCA
+        // For instance hdmi.getPins() of audio and video
         return true;
     }
-
 }

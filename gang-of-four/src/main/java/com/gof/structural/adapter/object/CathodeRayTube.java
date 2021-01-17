@@ -1,28 +1,22 @@
-package com.gof.structural.adapter.twoways;
-
-import com.gof.structural.adapter.object.ConnectorPort;
-import com.gof.structural.adapter.object.RCAConnector;
-import com.gof.structural.adapter.object.TV;
+package com.gof.structural.adapter.object;
 
 public class CathodeRayTube implements TV {
 
-    private final String screenType;
     private final RCAConnector videoInput;
     private final String name;
 
-    public CathodeRayTube(String screenType, RCAConnector videoInput, String name) {
-        this.screenType = screenType;
+    public CathodeRayTube(RCAConnector videoInput, String name) {
         this.videoInput = videoInput;
         this.name = name;
     }
 
     @Override
-    public String screenType() {
-        return this.screenType;
+    public String display() {
+        return "CRT";
     }
 
     @Override
-    public ConnectorPort videoInput() {
+    public ConnectorPort getInput() {
         return videoInput;
     }
 
@@ -33,7 +27,6 @@ public class CathodeRayTube implements TV {
 
 
     public static final class CathodeRayTubeBuilder {
-        private String screenType;
         private RCAConnector videoInput;
         private String name;
 
@@ -42,11 +35,6 @@ public class CathodeRayTube implements TV {
 
         public static CathodeRayTubeBuilder aCathodeRayTube() {
             return new CathodeRayTubeBuilder();
-        }
-
-        public CathodeRayTubeBuilder withScreenType(String screenType) {
-            this.screenType = screenType;
-            return this;
         }
 
         public CathodeRayTubeBuilder withVideoInput(RCAConnector videoInput) {
@@ -60,7 +48,7 @@ public class CathodeRayTube implements TV {
         }
 
         public CathodeRayTube build() {
-            return new CathodeRayTube(screenType, videoInput, name);
+            return new CathodeRayTube(videoInput, name);
         }
     }
 }

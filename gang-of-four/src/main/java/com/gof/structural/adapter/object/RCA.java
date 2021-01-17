@@ -6,9 +6,13 @@ public class RCA implements RCAConnector {
 
     private final String name;
 
-    public RCA(String name) {
-        this.name = name;
+    private static final RCA INSTANCE = new RCA();
+
+    private RCA() {
+        this.name = "RCA";
     }
+
+    public static RCA getInstance() { return INSTANCE; }
 
     @Override
     public String name() {
@@ -21,7 +25,7 @@ public class RCA implements RCAConnector {
     }
 
     @Override
-    public boolean ready() {
+    public boolean receiveSignal() {
         return false;
     }
 

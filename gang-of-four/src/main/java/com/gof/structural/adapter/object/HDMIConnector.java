@@ -1,6 +1,6 @@
 package com.gof.structural.adapter.object;
 
-public interface HDMIConnector {
+public interface HDMIConnector extends ConnectorPort{
 
     String name();
     String speed();
