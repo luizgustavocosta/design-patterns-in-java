@@ -1,13 +1,10 @@
-package com.gof.structural.adapter.twoways;
+package com.gof.structural.adapter.twoway;
 
-import com.gof.structural.adapter.object.HDMI;
-import com.gof.structural.adapter.object.HDMIConnector;
-import com.gof.structural.adapter.object.RCA;
-import com.gof.structural.adapter.object.RCAConnector;
+import com.gof.structural.adapter.domain.HDMI;
+import com.gof.structural.adapter.domain.HDMIConnector;
+import com.gof.structural.adapter.domain.RCA;
+import com.gof.structural.adapter.domain.RCAConnector;
 
-/**
- * Mocking the Two way by interface, since in GOF book they handle this by class
- */
 public class HDMIRCATwoWayAdapter implements HDMIConnector, RCAConnector {
 
     private HDMI hdmi;

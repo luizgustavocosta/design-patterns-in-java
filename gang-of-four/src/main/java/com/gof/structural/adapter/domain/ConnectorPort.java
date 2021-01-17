@@ -1,4 +1,4 @@
-package com.gof.structural.adapter.object;
+package com.gof.structural.adapter.domain;
 
 public interface ConnectorPort {
 

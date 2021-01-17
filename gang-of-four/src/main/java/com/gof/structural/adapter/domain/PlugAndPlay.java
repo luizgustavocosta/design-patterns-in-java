@@ -1,10 +1,12 @@
-package com.gof.structural.adapter.object;
+package com.gof.structural.adapter.domain;
 
-import com.gof.structural.adapter.twoways.HDMIRCATwoWayAdapter;
+import com.gof.structural.adapter.object.HDMIAdapter;
+import com.gof.structural.adapter.twoway.HDMIRCATwoWayAdapter;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Deprecated
 public class PlugAndPlay {
 
     private static final Logger logger = Logger.getLogger(PlugAndPlay.class.getName());

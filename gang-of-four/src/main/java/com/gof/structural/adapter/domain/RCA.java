@@ -1,4 +1,4 @@
-package com.gof.structural.adapter.object;
+package com.gof.structural.adapter.domain;
 
 import java.util.Objects;
 
@@ -8,7 +8,7 @@ public class RCA implements RCAConnector {
 
     private static final RCA INSTANCE = new RCA();
 
-    private RCA() {
+    public RCA() {
         this.name = "RCA";
     }
 

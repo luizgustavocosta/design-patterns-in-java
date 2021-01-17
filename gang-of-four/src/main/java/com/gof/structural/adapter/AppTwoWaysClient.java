@@ -1,35 +1,20 @@
 package com.gof.structural.adapter;
 
-import com.gof.structural.adapter.object.*;
+import com.gof.structural.adapter.clazz.RCAClassAdapter;
+import com.gof.structural.adapter.domain.*;
 
 public class AppTwoWaysClient {
 
     //private static final Logger logger = Logger.getLogger(AppTwoWaysClient.class.getName());
 
     public static void main(String[] args) {
-        TV crtTV = CathodeRayTube.CathodeRayTubeBuilder.aCathodeRayTube()
-                .withVideoInput(RCA.getInstance())
-                .withName("Grandmother's tv")
-                .build();
+        TV<RCAConnector> crtTV = new CathodeRayTube(RCA.getInstance(), "Grandmother's tv");
 
-        TV qLed = QuantumLightEmittingDiode.QuantumLightEmittingDiodeBuilder.aQuantumLightEmittingDiode()
-                .withInput(HDMI.getInstance())
-                .withName("LG 100 last generation 3D")
-                .build();
+        TV<HDMIConnector> qLed = new QuantumLightEmittingDiode(HDMI.getInstance(), "LG 100 last generation 3D");
 
-        Console xbox = Console.ConsoleBuilder.aConsole()
-                .withName("Xbox X")
-                .withManufacturer("Microsoft")
-                .withProductFamily("Microsoft Xbox")
-                .withVideoOutput(HDMI.getInstance())
-                .build();
+        Console<HDMIConnector> xbox = new Console("Microsoft", "Xbox X", "Xbox One", HDMI.getInstance());
 
-        Console sNes = Console.ConsoleBuilder.aConsole()
-                .withName("Super Nintendo")
-                .withManufacturer("Nintendo")
-                .withProductFamily("NES")
-                .withVideoOutput(RCA.getInstance())
-                .build();
+        Console<RCAClassAdapter> sNes = new Console("Nintendo", "NES", "SNES 16bit", RCA.getInstance());
 
         PlugAndPlay.universalConnect(crtTV, xbox);
         PlugAndPlay.universalConnect(crtTV, sNes);

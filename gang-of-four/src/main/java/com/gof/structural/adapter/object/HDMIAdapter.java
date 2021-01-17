@@ -1,5 +1,8 @@
 package com.gof.structural.adapter.object;
 
+import com.gof.structural.adapter.domain.HDMIConnector;
+import com.gof.structural.adapter.domain.RCAConnector;
+
 public class HDMIAdapter implements RCAConnector {
 
     private final HDMIConnector hdmi;
