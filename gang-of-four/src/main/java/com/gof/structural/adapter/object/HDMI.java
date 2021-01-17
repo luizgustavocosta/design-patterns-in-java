@@ -2,7 +2,7 @@ package com.gof.structural.adapter.object;
 
 import java.util.Objects;
 
-public class HDMI implements HDMIPort {
+public class HDMI implements HDMIConnector {
 
     private final String name;
 
@@ -17,6 +17,16 @@ public class HDMI implements HDMIPort {
     @Override
     public String name() {
         return name;
+    }
+
+    @Override
+    public String speed() {
+        return "48 Gbit/s";
+    }
+
+    @Override
+    public String connectCable() {
+        return "Video and audio together via HDMI";
     }
 
     @Override

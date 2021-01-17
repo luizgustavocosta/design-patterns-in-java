@@ -2,5 +2,5 @@ package com.gof.structural.adapter.object;
 
 public interface RCAConnector extends ConnectorPort {
 
-    boolean receiveSignal();
+    String connectCables();
 }

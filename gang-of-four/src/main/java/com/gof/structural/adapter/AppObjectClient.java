@@ -19,11 +19,7 @@ public class AppObjectClient {
                 .build();
 
         TV qLedTV = QuantumLightEmittingDiode.QuantumLightEmittingDiodeBuilder.aQuantumLightEmittingDiode()
-                .withInput(HDMIInput.HDMIInputBuilder.aHDMIInput()
-                        .withConnectors(3)
-                        .withName("HDMI")
-                        .withSpeed("100")
-                        .build())
+                .withInput(HDMI.getInstance())
                 .withName("Samsung Q80/Q80T QLED")
                 .build();
 

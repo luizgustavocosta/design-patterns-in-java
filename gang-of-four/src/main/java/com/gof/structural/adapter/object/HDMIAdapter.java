@@ -2,9 +2,9 @@ package com.gof.structural.adapter.object;
 
 public class HDMIAdapter implements RCAConnector {
 
-    private final HDMI hdmi;
+    private final HDMIConnector hdmi;
 
-    public HDMIAdapter(HDMI hdmi) {
+    public HDMIAdapter(HDMIConnector hdmi) {
         this.hdmi = hdmi;
     }
 
@@ -19,9 +19,9 @@ public class HDMIAdapter implements RCAConnector {
     }
 
     @Override
-    public boolean receiveSignal() {
-        // Electronic tasks here to convert the signal HDMI to RCA
+    public String connectCables() {
+        // Electronic tasks here to convert the signal to HDMI
         // For instance hdmi.getPins() of audio and video
-        return true;
+        return hdmi.connectCable();
     }
 }

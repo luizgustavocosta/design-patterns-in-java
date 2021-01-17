@@ -25,8 +25,8 @@ public class RCA implements RCAConnector {
     }
 
     @Override
-    public boolean receiveSignal() {
-        return false;
+    public String connectCables() {
+        return "A/V separated via RCA";
     }
 
     @Override

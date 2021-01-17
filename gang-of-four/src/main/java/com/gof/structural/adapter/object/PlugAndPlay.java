@@ -1,6 +1,7 @@
 package com.gof.structural.adapter.object;
 
-import java.util.Objects;
+import com.gof.structural.adapter.twoways.HDMIRCATwoWayAdapter;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,27 +13,33 @@ public class PlugAndPlay {
         throw new IllegalCallerException("Private constructor");
     }
 
-    public static void connect(TV tv, Console console) {
-
-        Objects.requireNonNull(tv, "The tv is required");
-        Objects.requireNonNull(console, "The console is required");
-
-        if (tv.getInput().name().equals(console.getOutput().name())) {
-            logger.log(Level.INFO, () -> "Tv " + tv.name() + ", and Console " + console.name() + " " +
-                    "has the same interface. No adapter required.");
+    public static void universalConnect(TV tv, Console console) {
+        if (console.getOutput() instanceof HDMIConnector) {
+            log(new HDMIRCATwoWayAdapter((HDMI) console.getOutput()).connectCable());
         } else {
-            logger.log(Level.INFO, () -> "Let's try connect different interfaces..");
-            final ConnectorPort output = console.getOutput();
-            if (output instanceof HDMI) {
-                final boolean receivingSignal = new HDMIAdapter((HDMI) output).receiveSignal();
-                if (receivingSignal) {
-                    logger.log(Level.INFO, () -> "Tv " + tv.name() + ", and Console " + console.name() + " " +
-                            "connected by an Adapter");
-                } else {
-                    logger.log(Level.WARNING, () -> "Please, change your Tv " + tv.name() + ", or the  Console " + console.name() + " " +
-                            "to a known interface");
-                }
+            log(new HDMIRCATwoWayAdapter((RCA) console.getOutput()).connectCables());
+        }
+    }
+
+    public static void connect(TV tv, Console console) {
+        if (tv.getInput().equals(console.getOutput())) {
+            log(String.format("%s%s%s%s%s",
+                    "Tv ",
+                    tv.name(),
+                    ", and the console ",
+                    console.name(),
+                    " has the same interface. No adapter required."));
+        } else {
+            log("Let's try connect different interfaces..");
+
+            if (console.getOutput() instanceof HDMI) {
+                log(new HDMIAdapter((HDMI) console.getOutput())
+                        .connectCables());
             }
         }
+    }
+
+    private static void log(String message) {
+        logger.log(Level.INFO, message);
     }
 }
