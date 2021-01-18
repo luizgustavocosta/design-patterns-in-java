@@ -1,24 +1,31 @@
 package com.gof.structural.adapter;
 
-import com.gof.structural.adapter.clazz.RCAClassAdapter;
-import com.gof.structural.adapter.domain.*;
+import com.gof.structural.adapter.domain.DeviceFactory;
+import com.gof.structural.adapter.twoway.HDMIRCATwoWayAdapter;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AppTwoWaysClient {
 
-    //private static final Logger logger = Logger.getLogger(AppTwoWaysClient.class.getName());
+    private static final Logger logger = Logger.getLogger(AppTwoWaysClient.class.getName());
 
     public static void main(String[] args) {
-        TV<RCAConnector> crtTV = new CathodeRayTube(RCA.getInstance(), "Grandmother's tv");
 
-        TV<HDMIConnector> qLed = new QuantumLightEmittingDiode(HDMI.getInstance(), "LG 100 last generation 3D");
+        final String qLedMegaDrive = DeviceFactory.createQLedTV()
+                .plug(new HDMIRCATwoWayAdapter(DeviceFactory.createMegaDrive().getOutput()));
 
-        Console<HDMIConnector> xbox = new Console("Microsoft", "Xbox X", "Xbox One", HDMI.getInstance());
+        logger.log(Level.INFO, qLedMegaDrive);
 
-        Console<RCAClassAdapter> sNes = new Console("Nintendo", "NES", "SNES 16bit", RCA.getInstance());
+        final String qLedPS5 = DeviceFactory.createQLedTV3D()
+                .plug(new HDMIRCATwoWayAdapter(DeviceFactory.createPSFive().getOutput()));
 
-        PlugAndPlay.universalConnect(crtTV, xbox);
-        PlugAndPlay.universalConnect(crtTV, sNes);
-        PlugAndPlay.universalConnect(qLed, sNes);
+        logger.log(Level.INFO, qLedPS5);
+
+        final String vintageSNes = DeviceFactory.createVintageTV()
+                .plug(new HDMIRCATwoWayAdapter(DeviceFactory.createSNES().getOutput()));
+
+        logger.log(Level.INFO, vintageSNes);
 
     }
 }

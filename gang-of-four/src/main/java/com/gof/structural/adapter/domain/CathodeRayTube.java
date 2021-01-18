@@ -5,7 +5,7 @@ public class CathodeRayTube implements TV<RCAConnector> {
     private final RCAConnector videoInput;
     private final String name;
 
-    public CathodeRayTube(RCAConnector videoInput, String name) {
+    public CathodeRayTube(String name, RCAConnector videoInput) {
         this.videoInput = videoInput;
         this.name = name;
     }

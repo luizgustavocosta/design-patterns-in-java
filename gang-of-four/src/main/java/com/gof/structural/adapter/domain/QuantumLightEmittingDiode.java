@@ -5,7 +5,7 @@ public class QuantumLightEmittingDiode implements TV<HDMIConnector> {
     private final HDMIConnector input;
     private final String name;
 
-    public QuantumLightEmittingDiode(HDMIConnector input, String name) {
+    public QuantumLightEmittingDiode(String name, HDMIConnector input) {
         this.input = input;
         this.name = name;
     }
@@ -27,7 +27,7 @@ public class QuantumLightEmittingDiode implements TV<HDMIConnector> {
 
     @Override
     public String plug(HDMIConnector type) {
-        return "connecting device..."+input.name();
+        return "Connecting device "+input.name()+". Done, enjoy your time :)";
     }
 
     @Override
