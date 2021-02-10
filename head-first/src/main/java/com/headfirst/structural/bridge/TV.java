@@ -1,8 +1,8 @@
 package com.headfirst.structural.bridge;
 
-public abstract class TV {
+public interface TV {
 
-    abstract void on();
-    abstract void off();
-    abstract void tuneChannel(int number);
+    void on();
+    void off();
+    void tuneChannel(int number);
 }

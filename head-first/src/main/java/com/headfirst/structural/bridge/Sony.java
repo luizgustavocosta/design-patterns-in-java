@@ -1,19 +1,19 @@
 package com.headfirst.structural.bridge;
 
-public class Sony extends TV {
+public class Sony implements TV {
 
     @Override
-    void on() {
+    public void on() {
         System.out.println(this.getClass().getSimpleName()+" on");
     }
 
     @Override
-    void off() {
+    public void off() {
         System.out.println(this.getClass().getSimpleName()+" off");
     }
 
     @Override
-    void tuneChannel(int number) {
+    public void tuneChannel(int number) {
         System.out.println(this.getClass().getSimpleName()+" tune channel to "+number);
     }
 }
