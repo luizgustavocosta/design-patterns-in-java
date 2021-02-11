@@ -17,10 +17,6 @@ public abstract class Vehicle {
         return container.getCost();
     }
 
-    public Dimension dimension() {
-        return container.getDimension();
-    }
-
     public String description() {
         return container.getCharacteristics();
     }
