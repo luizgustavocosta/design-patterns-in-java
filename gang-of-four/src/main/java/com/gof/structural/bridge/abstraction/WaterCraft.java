@@ -1,17 +1,16 @@
 package com.gof.structural.bridge.abstraction;
 
-import com.gof.structural.bridge.implementation.Cargo;
-
-import java.time.ZonedDateTime;
+import com.gof.structural.bridge.implementor.Container;
 
 public class WaterCraft extends Vehicle {
 
-    public WaterCraft(Cargo cargo) {
-        super(cargo);
+    public WaterCraft(Container container) {
+        super(container);
     }
 
     @Override
-    public ZonedDateTime estimateArrivalTime() {
-        return super.estimateArrivalTime().minusDays(2); // Will be delivered soon \o/
+    public float getCapacity() {
+        return 266_000f;
     }
+
 }

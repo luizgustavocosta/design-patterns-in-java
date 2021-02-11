@@ -1,0 +1,15 @@
+https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgQ2xpZW50IC4uPiBBYnN0cmFjdGlvbiA6dXNlc1xuICAgIFJlZmluZWRBYnN0cmFjdGlvbiAtLXw-IEFic3RyYWN0aW9uIDpleHRlbmRzXG4gICAgQWJzdHJhY3Rpb24gby0tIEltcGxlbWVudG9yIDogaGFzIGFcbiAgICBJbXBsZW1lbnRvciAgPHwtLSBDb25jcmV0ZUltcGxlbWVudG9yQTogaW1wbGVtZW50c1xuICAgIEltcGxlbWVudG9yICA8fC0tIENvbmNyZXRlSW1wbGVtZW50b3JCOiBpbXBsZW1lbnRzXG4gICAgY2xhc3MgSW1wbGVtZW50b3J7XG4gICAgPDxpbnRlcmZhY2U-PlxuICAgICAgICBvcGVyYXRpb25JbXBsKClcbiAgICB9XG4gICAgY2xhc3MgQWJzdHJhY3Rpb24ge1xuICAgICAgIG9wZXJhdGlvbigpXG4gICAgfSAgICAgICAgXG4gICAgXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ
+classDiagram
+    Client ..> Abstraction :uses
+    RefinedAbstraction --|> Abstraction :extends
+    Abstraction o-- Implementor : has a
+    Implementor  <|-- ConcreteImplementorA: implements
+    Implementor  <|-- ConcreteImplementorB: implements
+    class Implementor{
+    <<interface>>
+        operationImpl()
+    }
+    class Abstraction {
+       operation()
+    }
+

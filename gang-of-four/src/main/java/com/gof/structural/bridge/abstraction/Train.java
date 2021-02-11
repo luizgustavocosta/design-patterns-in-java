@@ -2,14 +2,14 @@ package com.gof.structural.bridge.abstraction;
 
 import com.gof.structural.bridge.implementor.Container;
 
-public class Truck extends Vehicle {
+public class Train extends Vehicle {
 
-    public Truck(Container container) {
+    public Train(Container container) {
         super(container);
     }
 
     @Override
     public float getCapacity() {
-        return getContainerCapacity() * 2; // // Since the truck is so big
+        return getContainerCapacity() * 42; // Is too big
     }
 }

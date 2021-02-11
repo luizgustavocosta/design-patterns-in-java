@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * The type App main.
@@ -25,7 +26,7 @@ public class AppMain {
     public static void main(String[] args) {
         final TVChannel tvChannel = TVChannel.ChannelBuilder.aChannel()
                 .withName("ESPN")
-                .withCategories(Arrays.asList(Category.SPORT))
+                .withCategories(Collections.singletonList(Category.SPORT))
                 .withProgramGuide(Arrays.asList(
                         Program.ProgramGuideBuilder.aProgramGuide()
                                 .withStart(LocalDateTime.now())
@@ -37,7 +38,7 @@ public class AppMain {
                                 .withStart(LocalDateTime.now().plus(Duration.ofMinutes(65)))
                                 .withFinish(LocalDateTime.now().plus(Duration.ofMinutes(95)))
                                 .withDescription("New Zeland x Canada - soccer match")
-                                .withCategory(Arrays.asList(Category.SPORT))
+                                .withCategory(Collections.singletonList(Category.SPORT))
                                 .build()
                 ))
                 .build();

@@ -2,14 +2,15 @@ package com.gof.structural.bridge.abstraction;
 
 import com.gof.structural.bridge.implementor.Container;
 
-public class Truck extends Vehicle {
+public class AirCraft extends Vehicle {
 
-    public Truck(Container container) {
+    public AirCraft(Container container) {
         super(container);
     }
 
     @Override
     public float getCapacity() {
-        return getContainerCapacity() * 2; // // Since the truck is so big
+        return 1_300f; //Based on Antonov An-225 Mriya
     }
+
 }

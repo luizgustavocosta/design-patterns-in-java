@@ -1,0 +1,24 @@
+https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgQ2xpZW50IC4uPiBWZWhpY2xlIDp1c2VzXG4gICAgQWlyQ3JhZnQgLS18PiBWZWhpY2xlIDpleHRlbmRzXG4gICAgTW90b3JjeWNsZSAtLXw-IFZlaGljbGUgOmV4dGVuZHNcbiAgICBUcnVjayAtLXw-IFZlaGljbGUgOmV4dGVuZHNcbiAgICBXYXRlckNyYWZ0IC0tfD4gVmVoaWNsZSA6ZXh0ZW5kc1xuICAgIFZlaGljbGUgby0tIENhcmdvIDogaGFzIGFcbiAgICBDYXJnbyAgPHwtLSBBaXI6IGltcGxlbWVudHNcbiAgICBDYXJnbyAgPHwtLSBNYXJpbmU6IGltcGxlbWVudHNcbiAgICBDYXJnbyAgPHwtLSBSYWlsOiBpbXBsZW1lbnRzXG4gICAgQ2FyZ28gIDx8LS0gUm9hZDogaW1wbGVtZW50c1xuICAgIGNsYXNzIENhcmdve1xuICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICAgY29zdCgpXG4gICAgICAgZXN0aW1hdGVBcnJpdmFsVGltZSgpXG4gICAgICAgbWF4TG9hZCgpXG4gICAgfVxuICAgIGNsYXNzIFZlaGljbGUge1xuICAgICAgIGNvc3QoKVxuICAgICAgIGVzdGltYXRlQXJyaXZhbFRpbWUoKVxuICAgICAgIG1heExvYWQoKVxuICAgIH0gICAgICAgIFxuICAgIFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0
+classDiagram
+    Client ..> Vehicle :uses
+    AirCraft --|> Vehicle :extends
+    Motorcycle --|> Vehicle :extends
+    Truck --|> Vehicle :extends
+    WaterCraft --|> Vehicle :extends
+    Vehicle o-- Cargo : has a
+    Cargo  <|-- Air: implements
+    Cargo  <|-- Marine: implements
+    Cargo  <|-- Rail: implements
+    Cargo  <|-- Road: implements
+    class Cargo{
+    <<interface>>
+        cost()
+       estimateArrivalTime()
+       maxLoad()
+    }
+    class Vehicle {
+       cost()
+       estimateArrivalTime()
+       maxLoad()
+    }
+
