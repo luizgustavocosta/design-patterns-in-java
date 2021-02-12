@@ -1,15 +1,16 @@
 package com.gof.structural.bridge.abstraction;
 
 import com.gof.structural.bridge.implementor.Container;
-import com.gof.structural.bridge.implementor.dimension.Dimension;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public abstract class Vehicle {
 
     private final Container container;
 
     protected Vehicle(Container container) {
+        Objects.requireNonNull(container, "The vehicle should have a container");
         this.container = container;
     }
 
