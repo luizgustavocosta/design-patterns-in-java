@@ -14,7 +14,7 @@ class VehicleTest implements WithAssertions {
             new Vehicle(null) {
                 @Override
                 public float getCapacity() {
-                    return 0;
+                    return Float.MIN_VALUE;
                 }
             };
         });

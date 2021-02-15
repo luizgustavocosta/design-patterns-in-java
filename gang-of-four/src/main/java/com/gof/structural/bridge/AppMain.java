@@ -30,7 +30,7 @@ public class AppMain {
                 "Type = " + vehicle.getClass().getSimpleName() +
                 ", Space for = " + vehicle.getCapacity() + " m3" +
                 ", [Container {Max load = " + String.format(Locale.US, "%,.3f", vehicle.getContainerMaxLoad()) + " kg" +
-                ", Capacity = " + vehicle.getContainerCapacity() + " m3"+
+                ", Capacity = " + vehicle.getContainerCapacity() + " m3" +
                 ", Cost = " + NumberFormat.getCurrencyInstance().format(vehicle.cost()) +
                 "']}'");
 
