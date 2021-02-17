@@ -22,7 +22,7 @@
 <br />
 <p align="center">
   <a href="https://www.youtube.com/channel/UCPOdfYoz_hTNrngfouB24jQ">
-    <img src="https://github.com/luizgustavocosta/design-patterns-in-java/blob/master/gang-of-four/src/main/resources/16bits.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/luizgustavocosta/design-patterns-in-java/blob/master/gang-of-four/src/main/resources/16bits.png" alt="Logo">
   </a>
 
   <h3 align="center">Design pattern Bridge</h3>
