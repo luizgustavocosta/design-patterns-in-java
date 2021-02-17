@@ -1,24 +1,26 @@
-https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgQ2xpZW50IC4uPiBWZWhpY2xlIDp1c2VzXG4gICAgQWlyQ3JhZnQgLS18PiBWZWhpY2xlIDpleHRlbmRzXG4gICAgTW90b3JjeWNsZSAtLXw-IFZlaGljbGUgOmV4dGVuZHNcbiAgICBUcnVjayAtLXw-IFZlaGljbGUgOmV4dGVuZHNcbiAgICBXYXRlckNyYWZ0IC0tfD4gVmVoaWNsZSA6ZXh0ZW5kc1xuICAgIFZlaGljbGUgby0tIENhcmdvIDogaGFzIGFcbiAgICBDYXJnbyAgPHwtLSBBaXI6IGltcGxlbWVudHNcbiAgICBDYXJnbyAgPHwtLSBNYXJpbmU6IGltcGxlbWVudHNcbiAgICBDYXJnbyAgPHwtLSBSYWlsOiBpbXBsZW1lbnRzXG4gICAgQ2FyZ28gIDx8LS0gUm9hZDogaW1wbGVtZW50c1xuICAgIGNsYXNzIENhcmdve1xuICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICAgY29zdCgpXG4gICAgICAgZXN0aW1hdGVBcnJpdmFsVGltZSgpXG4gICAgICAgbWF4TG9hZCgpXG4gICAgfVxuICAgIGNsYXNzIFZlaGljbGUge1xuICAgICAgIGNvc3QoKVxuICAgICAgIGVzdGltYXRlQXJyaXZhbFRpbWUoKVxuICAgICAgIG1heExvYWQoKVxuICAgIH0gICAgICAgIFxuICAgIFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0
+https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgQ2xpZW50IC4uPiBWZWhpY2xlIDp1c2VzXG4gICAgQWlyQ3JhZnQgLS18PiBWZWhpY2xlIDpleHRlbmRzXG4gICAgTW90b3JjeWNsZSAtLXw-IFZlaGljbGUgOmV4dGVuZHNcbiAgICBUcnVjayAtLXw-IFZlaGljbGUgOmV4dGVuZHNcbiAgICBXYXRlckNyYWZ0IC0tfD4gVmVoaWNsZSA6ZXh0ZW5kc1xuICAgIFZlaGljbGUgby0tIENvbnRhaW5lciA6IGhhcyBhXG4gICAgQ29udGFpbmVyICA8fC0tIEFpcjogaW1wbGVtZW50c1xuICAgIENvbnRhaW5lciAgPHwtLSBNYXJpbmU6IGltcGxlbWVudHNcbiAgICBDb250YWluZXIgIDx8LS0gUmFpbDogaW1wbGVtZW50c1xuICAgIENvbnRhaW5lciAgPHwtLSBSb2FkOiBpbXBsZW1lbnRzXG4gICAgY2xhc3MgQ29udGFpbmVye1xuICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICBjb3N0KClcbiAgICAgICBkaW1lbnNpb24oKVxuICAgICAgIGNoYXJhY3RlcmlzdGljcygpXG4gICAgfVxuICAgIGNsYXNzIFZlaGljbGUge1xuICAgICAgIGNvc3QoKVxuICAgICAgIGVzdGltYXRlQXJyaXZhbFRpbWUoKVxuICAgICAgIG1heExvYWQoKVxuICAgIH0gICAgICAgIFxuICAgIFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0
 classDiagram
     Client ..> Vehicle :uses
     AirCraft --|> Vehicle :extends
     Motorcycle --|> Vehicle :extends
     Truck --|> Vehicle :extends
     WaterCraft --|> Vehicle :extends
-    Vehicle o-- Cargo : has a
-    Cargo  <|-- Air: implements
-    Cargo  <|-- Marine: implements
-    Cargo  <|-- Rail: implements
-    Cargo  <|-- Road: implements
-    class Cargo{
+    Vehicle o-- Container : has a
+    Container  <|-- Air: implements
+    Container  <|-- Marine: implements
+    Container  <|-- Rail: implements
+    Container  <|-- Road: implements
+    class Container{
     <<interface>>
-        cost()
-       estimateArrivalTime()
-       maxLoad()
+       cost()
+       dimension()
+       characteristics()
     }
     class Vehicle {
        cost()
        estimateArrivalTime()
        maxLoad()
     }
+
+
 
