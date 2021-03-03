@@ -11,7 +11,8 @@ CSV_Files/**
 .settings
 .springBeans
 
-
+.classpath
+.project
 ### IntelliJ IDEA ###
 .idea
 *.iws
