@@ -8,9 +8,9 @@ public class Friend extends Friendship {
     private final List<Friendship> friendships;
     private final String name;
     private final String nickName;
-    private final String country;
+    private final Country country;
 
-    public Friend(String name, String nickName, String country) {
+    public Friend(String name, String nickName, Country country) {
         this.name = name;
         this.nickName = nickName;
         this.country = country;
@@ -19,7 +19,9 @@ public class Friend extends Friendship {
 
     @Override
     void add(Friendship component) {
-        friendships.add(component);
+        if (!this.equals(component)) {
+            friendships.add(component);
+        }
     }
 
     @Override
@@ -29,19 +31,19 @@ public class Friend extends Friendship {
 
     @Override
     public void print() {
-        System.out.println("Friends of "+name+" of Country "+country);
         for (Friendship friendship : friendships) {
             if (friendship.hasFriends()) {
+                System.out.println(friendship);
                 friendship.print();
+            } else {
+                System.out.println(friendship);
             }
-            System.out.println("This is a "+name+" friend");
-            System.out.println(friendship);
         }
     }
 
     @Override
-    Friendship getChild() {
-        return null;
+    List<Friendship> getChildren() {
+        return friendships;
     }
 
     @Override
