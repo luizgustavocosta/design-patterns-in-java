@@ -8,12 +8,12 @@ public class Friend extends Friendship {
     private final List<Friendship> friendships;
     private final String name;
     private final String nickName;
-    private final Country country;
+    private final CountryAlphaCode countryAlphaCode;
 
-    public Friend(String name, String nickName, Country country) {
+    public Friend(String name, String nickName, CountryAlphaCode countryAlphaCode) {
         this.name = name;
         this.nickName = nickName;
-        this.country = country;
+        this.countryAlphaCode = countryAlphaCode;
         this.friendships = new ArrayList<>();
     }
 
@@ -25,18 +25,22 @@ public class Friend extends Friendship {
     }
 
     @Override
-    void remove(Friendship component) {
-        super.remove(component);
+    void remove(Friendship friend) {
+        this.friendships.remove(friend);
     }
 
     @Override
     public void print() {
+        if (friendships.size() == 1) {
+            System.out.printf("%-35s %s %n","Friend of "+ this.name+ " is .:", this.friendships);
+        } else {
+            System.out.printf("%-35s %s %n","Friends of "+ this.name+ " are .:", this.friendships);
+        }
         for (Friendship friendship : friendships) {
             if (friendship.hasFriends()) {
-                System.out.println(friendship);
                 friendship.print();
             } else {
-                System.out.println(friendship);
+                System.out.printf("Leaf .: %s%n",friendship);
             }
         }
     }
@@ -51,12 +55,16 @@ public class Friend extends Friendship {
         return friendships.size() > 0;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
     @Override
     public String toString() {
-        return "Friend{" +
-                "name='" + name + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        return nickName +" from "+ countryAlphaCode;
     }
 }
