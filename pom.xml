@@ -18,10 +18,6 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <!--     Sonarcloud-->
-        <sonar.projectKey>luizgustavocosta_design-patterns-in-java</sonar.projectKey>
-        <sonar.organization>luizgustavocosta</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <build>
         <plugins>

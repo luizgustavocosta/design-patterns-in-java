@@ -39,4 +39,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -pl gang-of-four -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: cd gang-of-four && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
