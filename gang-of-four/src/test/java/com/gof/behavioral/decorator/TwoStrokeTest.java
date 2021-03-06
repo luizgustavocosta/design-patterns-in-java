@@ -12,7 +12,7 @@ class TwoStrokeTest {
         Engine truckCommerTS3 = new TwoStroke(107);
         truckCommerTS3 = new Single(truckCommerTS3);
 
-        assertThat(truckCommerTS3.horsePower).as("").isEqualTo(107*2.5);
+        assertThat(truckCommerTS3.horsePower).as("").isEqualTo(107);
     }
 
 }

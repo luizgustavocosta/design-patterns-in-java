@@ -20,7 +20,7 @@ class SequentialTest {
     void givenAnInitialHpApplyTuningTurboCharger() {
         Engine mercedesAMG = new FourStroke(416);
         mercedesAMG = new Sequential(mercedesAMG);
-        int expected = 541;
+        int expected = 540;
         assertThat(expected).as("HP expected doesn't match").isEqualTo(mercedesAMG.horsePower());
     }
 }

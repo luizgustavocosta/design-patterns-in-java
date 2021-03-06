@@ -12,13 +12,14 @@
         <java.version>11</java.version>
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <junit.maven.surefire.plugin.version>2.19.1</junit.maven.surefire.plugin.version>
-        <junit.platform.commons.version>1.6.2</junit.platform.commons.version>
+        <junit.platform.commons.version>1.7.1</junit.platform.commons.version>
         <junit.platform.surefire.provider.version>1.1.0</junit.platform.surefire.provider.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <mockito.core.version>2.24.0</mockito.core.version>
         <mockito.junit.jupiter.vesion>3.3.0</mockito.junit.jupiter.vesion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
         <spring.framework.version>5.1.8.RELEASE</spring.framework.version>
         <spring.maven.plugin.version>1.4.2.RELEASE</spring.maven.plugin.version>
         <reflections.version>0.9.10</reflections.version>
@@ -28,6 +29,10 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>1.9.2.Final</quarkus.platform.version>
         <quarkus-plugin.version>1.9.2.Final</quarkus-plugin.version>
+        <!--     Sonarcloud-->
+        <sonar.projectKey>luizgustavocosta_design-patterns-in-java</sonar.projectKey>
+        <sonar.organization>luizgustavocosta</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <artifactId>gang-of-four</artifactId>
     <dependencyManagement>
@@ -90,12 +95,6 @@
             <version>2.3.0-b170127.1453</version>
         </dependency>
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>2.21.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-commons</artifactId>
             <version>${junit.platform.commons.version}</version>
@@ -125,12 +124,6 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.core.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.9.1</version>
             <scope>test</scope>
         </dependency>
         <!--        Spring Singleton -->
@@ -173,12 +166,6 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -233,6 +220,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <skip>${spring-boot.repackage.skip}</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>
