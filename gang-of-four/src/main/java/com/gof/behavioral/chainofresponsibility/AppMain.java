@@ -16,6 +16,8 @@ import java.util.List;
 
 public class AppMain {
 
+    public static final String DESIGN_PATTERNS_BOOK = "Design Patterns book";
+
     public static void main(String[] args) {
         List<Item> items = createItems();
         List<Voucher> vouchers = createVouchers();
@@ -47,11 +49,11 @@ public class AppMain {
         CurrencyUnit unitEuro = Monetary.getCurrency("EUR");
 
         return Arrays.asList(
-            Item.ItemBuilder.anItem().withName("Design Patterns book").withAmount(Money.of(42.05, unitEuro)).build(),
+            Item.ItemBuilder.anItem().withName(DESIGN_PATTERNS_BOOK).withAmount(Money.of(42.05, unitEuro)).build(),
             Item.ItemBuilder.anItem().withName("Sapiens").withAmount(Money.of(42.99, unitEuro)).build(),
-            Item.ItemBuilder.anItem().withName("Design Patterns book").withAmount(Money.of(42.05, unitEuro)).build(),
+            Item.ItemBuilder.anItem().withName(DESIGN_PATTERNS_BOOK).withAmount(Money.of(42.05, unitEuro)).build(),
             Item.ItemBuilder.anItem().withName("How to play soccer").withAmount(Money.of(11.20, unitEuro)).build(),
             Item.ItemBuilder.anItem().withName("How to play football").withAmount(Money.of(11.20, unitEuro)).build(),
-            Item.ItemBuilder.anItem().withName("Design Patterns book").withAmount(Money.of(42.05, unitEuro)).build());
+            Item.ItemBuilder.anItem().withName(DESIGN_PATTERNS_BOOK).withAmount(Money.of(42.05, unitEuro)).build());
     }
 }
