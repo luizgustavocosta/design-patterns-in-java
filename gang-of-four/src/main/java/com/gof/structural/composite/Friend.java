@@ -20,23 +20,23 @@ public class Friend extends Friendship {
     @Override
     void add(Friendship component) {
         if (!this.equals(component)) {
-            friendships.add(component);
+            getChildren().add(component);
         }
     }
 
     @Override
     void remove(Friendship friend) {
-        this.friendships.remove(friend);
+        this.getChildren().remove(friend);
     }
 
     @Override
     public void print() {
         if (friendships.size() == 1) {
-            System.out.printf("%-35s %s %n","Friend of "+ this.name+ " is .:", this.friendships);
+            System.out.printf("%-35s %s %n","Friend of "+ this.name+ " is .:", this.getChildren());
         } else {
-            System.out.printf("%-35s %s %n","Friends of "+ this.name+ " are .:", this.friendships);
+            System.out.printf("%-35s %s %n","Friends of "+ this.name+ " are .:", this.getChildren());
         }
-        for (Friendship friendship : friendships) {
+        for (Friendship friendship : getChildren()) {
             if (friendship.hasFriends()) {
                 friendship.print();
             } else {
@@ -52,15 +52,7 @@ public class Friend extends Friendship {
 
     @Override
     boolean hasFriends() {
-        return friendships.size() > 0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getNickName() {
-        return nickName;
+        return getChildren().size() > 0;
     }
 
     @Override

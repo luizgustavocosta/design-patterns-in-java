@@ -1,0 +1,24 @@
+https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgXG4gICAgQ29tcG9uZW50IDx8LS0gQ29tcG9zaXRlIDpleHRlbmRzXG4gICAgQ29tcG9uZW50IDx8LS0gIExlYWYgOmV4dGVuZHNcbiAgICBDbGllbnQgLi4-IENvbXBvbmVudCA6dXNlc1xuICAgIENvbXBvc2l0ZSBvLS0gQ29tcG9uZW50IDogY2hpbGRyZW5cbiAgICBjbGFzcyBDb21wb3NpdGUge1xuICAgICAgIG9wZXJhdGlvbigpIFxuICAgICAgIGFkZChDb21wb25lbnQpXG4gICAgICAgcmVtb3ZlKENvbXBvbmVudClcbiAgICAgICBnZXRDaGlsZChpbnQpXG4gICAgfVxuICAgIGNsYXNzIExlYWYge1xuICAgICAgICBvcGVyYXRpb24oKVxuICAgIH1cbiAgICBjbGFzcyBDb21wb25lbnQge1xuICAgICAgIG9wZXJhdGlvbigpXG4gICAgICAgYWRkKENvbXBvbmVudClcbiAgICAgICByZW1vdmUoQ29tcG9uZW50KVxuICAgICAgIGdldENoaWxkKGludClcbiAgICB9ICAgICAgICBcbiAgICBcbiAgICBcbiIsIm1lcm1haWQiOnt9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ
+classDiagram
+
+    Component <|-- Composite :extends
+    Component <|--  Leaf :extends
+    Client ..> Component :uses
+    Composite o-- Component : children
+    class Composite {
+       operation()
+       add(Component)
+       remove(Component)
+       getChild(int)
+    }
+    class Leaf {
+        operation()
+    }
+    class Component {
+       operation()
+       add(Component)
+       remove(Component)
+       getChild(int)
+    }
+
+

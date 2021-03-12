@@ -1,0 +1,21 @@
+https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgXG4gICAgRnJpZW5kc2hpcCA8fC0tIEZyaWVuZCA6ZXh0ZW5kc1xuICAgIEFwcENsaWVudCAuLj4gRnJpZW5kc2hpcCA6dXNlc1xuICAgIEZyaWVuZCBvLS0gRnJpZW5kc2hpcCA6IGNoaWxkcmVuXG4gICAgY2xhc3MgRnJpZW5kIHtcbiAgICAgICAtIExpc3R-RnJpZW5kc2hpcH5mcmllbmRzaGlwc1xuICAgICAgIC1TdHJpbmcgbmFtZTtcbiAgICAgICAtU3RyaW5nIG5pY2tOYW1lO1xuICAgICAgIC1Db3VudHJ5QWxwaGFDb2RlIGNvdW50cnlBbHBoYUNvZGVcbiAgICB9XG4gICAgY2xhc3MgRnJpZW5kc2hpcCB7XG4gICAgICAgYWRkKENvbXBvbmVudClcbiAgICAgICByZW1vdmUoQ29tcG9uZW50KVxuICAgICAgIExpc3R-RnJpZW5kc2hpcH4gZ2V0Q2hpbGRyZW4oKVxuICAgICAgIGhhc0ZyaWVuZCgpYm9vbGVhblxuICAgICAgIHByaW50KCkgdm9pZFxuICAgIH0gICAgICAgIFxuICAgIFxuICAgIFxuIiwibWVybWFpZCI6e30sInVwZGF0ZUVkaXRvciI6ZmFsc2V9
+classDiagram
+
+    Friendship <|-- Friend :extends
+    AppClient ..> Friendship :uses
+    Friend o-- Friendship : children
+    class Friend {
+       - List~Friendship~friendships
+       -String name;
+       -String nickName;
+       -CountryAlphaCode countryAlphaCode
+    }
+    class Friendship {
+       add(Component)
+       remove(Component)
+       List~Friendship~ getChildren()
+       hasFriend()boolean
+       print() void
+    }
+
+
