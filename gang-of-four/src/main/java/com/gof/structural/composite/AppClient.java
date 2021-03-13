@@ -40,6 +40,7 @@ public class AppClient {
         System.out.println("//////////////////////////////////////////");
         System.out.println("Now..let's removing one friendship");
         friendship.remove(ronaldo);
+
         friendship.print();
     }
 }

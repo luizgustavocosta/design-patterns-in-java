@@ -2,6 +2,7 @@ package com.gof.structural.composite;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Friend extends Friendship {
 
@@ -58,5 +59,20 @@ public class Friend extends Friendship {
     @Override
     public String toString() {
         return nickName +" from "+ countryAlphaCode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Friend friend = (Friend) o;
+        return Objects.equals(name, friend.name) &&
+                Objects.equals(nickName, friend.nickName) &&
+                countryAlphaCode == friend.countryAlphaCode;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, nickName, countryAlphaCode);
     }
 }
