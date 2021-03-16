@@ -1,7 +1,7 @@
-package com.gof.behavioral.decorator.turbo;
+package com.gof.structural.decorator.turbo;
 
-import com.gof.behavioral.decorator.Electrical;
-import com.gof.behavioral.decorator.Engine;
+import com.gof.structural.decorator.Electrical;
+import com.gof.structural.decorator.Engine;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

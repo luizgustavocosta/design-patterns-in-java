@@ -1,7 +1,7 @@
-package com.gof.behavioral.decorator.turbo;
+package com.gof.structural.decorator.turbo;
 
-import com.gof.behavioral.decorator.Engine;
-import com.gof.behavioral.decorator.TwoStroke;
+import com.gof.structural.decorator.Engine;
+import com.gof.structural.decorator.TwoStroke;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

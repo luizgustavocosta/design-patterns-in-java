@@ -1,10 +1,10 @@
-package com.gof.behavioral.decorator;
+package com.gof.structural.decorator;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.gof.behavioral.decorator.EngineType.REACTION;
-import static com.gof.behavioral.decorator.EngineType.THERMAL_EC;
+import static com.gof.structural.decorator.EngineType.REACTION;
+import static com.gof.structural.decorator.EngineType.THERMAL_EC;
 
 /**
  * The type Two stroke.

@@ -1,4 +1,4 @@
-package com.gof.behavioral.decorator;
+package com.gof.structural.decorator;
 
 /**
  * The enum Engine type.

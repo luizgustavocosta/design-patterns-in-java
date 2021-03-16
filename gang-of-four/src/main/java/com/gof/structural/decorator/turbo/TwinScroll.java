@@ -1,7 +1,7 @@
-package com.gof.behavioral.decorator.turbo;
+package com.gof.structural.decorator.turbo;
 
-import com.gof.behavioral.decorator.Engine;
-import com.gof.behavioral.decorator.TurboCharger;
+import com.gof.structural.decorator.Engine;
+import com.gof.structural.decorator.TurboCharger;
 
 import java.util.Collections;
 

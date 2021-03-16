@@ -1,6 +1,6 @@
-package com.gof.behavioral.decorator;
+package com.gof.structural.decorator;
 
-import com.gof.behavioral.decorator.turbo.Single;
+import com.gof.structural.decorator.turbo.Single;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

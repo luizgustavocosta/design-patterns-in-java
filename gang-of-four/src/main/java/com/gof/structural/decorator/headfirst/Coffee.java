@@ -1,4 +1,4 @@
-package com.gof.behavioral.decorator.headfirst;
+package com.gof.structural.decorator.headfirst;
 
 import java.math.BigDecimal;
 
