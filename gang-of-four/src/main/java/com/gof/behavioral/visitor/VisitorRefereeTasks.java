@@ -1,22 +1,13 @@
 package com.gof.behavioral.visitor;
 
-/**
- * The interface Visitor referee tasks.
- */
+import java.time.LocalDateTime;
+import java.util.List;
+
 public interface VisitorRefereeTasks {
 
-    /**
-     * Check teams.
-     */
-    void checkTeams();
+    void visit(Team home, Team away);
 
-    /**
-     * Check date and time.
-     */
-    void checkDateAndTime();
+    void visit(LocalDateTime localDateTime);
 
-    /**
-     * Check players.
-     */
-    void checkPlayers();
+    void visit(List<Player> players);
 }

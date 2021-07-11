@@ -3,51 +3,36 @@ package com.gof.behavioral.visitor;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.ZonedDateTime;
+import java.util.List;
 
-
-/**
- * The type Referee visitor.
- */
 public class RefereeVisitor implements VisitorRefereeTasks {
 
-    private final RefereeBeforeStartMatch node;
-
-    /**
-     * Instantiates a new Referee visitor.
-     *
-     * @param node the node
-     */
-    RefereeVisitor(RefereeBeforeStartMatch node) {
-        this.node = node;
-    }
-
     @Override
-    public void checkTeams() {
-        if (node.getHome().getUniformColor().equals(node.getTeamVisitor().getUniformColor())) {
+    public void visit(Team home, Team away) {
+        if (home.getUniformColor().equals(away.getUniformColor())) {
             throw new IllegalStateException("An uniform change is required");
         }
     }
 
     @Override
-    public void checkDateAndTime() {
-        LocalDateTime currentLocalDateAndTime = LocalDateTime.now();
-        if (node.getMatchDate().isBefore(currentLocalDateAndTime)) {
+    public void visit(LocalDateTime localDateTime) {
+        if (localDateTime.isBefore(LocalDateTime.now())) {
             throw new IllegalStateException("Date and time not allowed for this match.");
         }
     }
 
     @Override
-    public void checkPlayers() {
-        node.getPlayers().forEach(RefereeVisitor::checkPlayer);
+    public void visit(List<Player> players) {
+        players.forEach(RefereeVisitor::checkPlayer);
     }
 
     private static void checkPlayer(Player player) {
         if (player.getNumber() == 0) {
-            throw new IllegalStateException("This player ["+player.getName()+"] requires a number.");
+            throw new IllegalStateException("This player ["+player.getFirstName()+"] requires a number.");
         }
         ZonedDateTime ageRequired = ZonedDateTime.now().minus(Period.ofYears(18));
         if (player.getDob().isBefore(ageRequired)) {
-            throw new IllegalStateException("Sorry, only player with 18 years old are allowed.");
+            throw new IllegalStateException("Sorry, the minimum age is 18 years old.");
         }
     }
 }
