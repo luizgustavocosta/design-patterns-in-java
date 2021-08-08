@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.gof.structural.proxy.gof</OriginalElement>
+  <nodes>
+    <node x="-34.890094339622664" y="96.45283018867923">com.gof.structural.proxy.gof.RealSubject</node>
+    <node x="-62.79599323680702" y="-49.20197044334978">com.gof.structural.proxy.gof.Client</node>
+    <node x="133.87197290011247" y="-49.20197044334978">com.gof.structural.proxy.gof.Subject</node>
+    <node x="185.28301886792462" y="96.45283018867923">com.gof.structural.proxy.gof.Proxy</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.gof.structural.proxy.gof.Proxy" target="com.gof.structural.proxy.gof.RealSubject" relationship="TO_ONE">
+      <point x="-61.66666666666666" y="-38.5" />
+      <point x="216.11635220125797" y="203.24528301886795" />
+      <point x="-0.1400943396226637" y="203.24528301886795" />
+      <point x="-34.75" y="27.0" />
+    </edge>
+    <edge source="com.gof.structural.proxy.gof.Proxy" target="com.gof.structural.proxy.gof.Subject" relationship="REALIZATION">
+      <point x="61.66666666666666" y="-38.5" />
+      <point x="277.7830188679246" y="96.45283018867923" />
+      <point x="277.7830188679246" y="84.0" />
+      <point x="197.80030323450134" y="84.0" />
+      <point x="197.80030323450134" y="4.798029556650221" />
+      <point x="-32.5" y="27.0" />
+    </edge>
+    <edge source="com.gof.structural.proxy.gof.RealSubject" target="com.gof.structural.proxy.gof.Subject" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="34.609905660377336" y="84.0" />
+      <point x="166.37197290011247" y="84.0" />
+      <point x="-32.5" y="27.0" />
+    </edge>
+    <edge source="com.gof.structural.proxy.gof.Proxy" target="com.gof.structural.proxy.gof.RealSubject" relationship="DEPENDENCY">
+      <point x="0.0" y="-38.5" />
+      <point x="277.7830188679246" y="210.41509433962264" />
+      <point x="69.35990566037734" y="210.41509433962264" />
+      <point x="34.75" y="27.0" />
+    </edge>
+    <edge source="com.gof.structural.proxy.gof.Client" target="com.gof.structural.proxy.gof.Subject" relationship="TO_ONE">
+      <point x="0.0" y="-27.0" />
+      <point x="6.204006763192979" y="-22.20197044334978" />
+      <point x="231.37197290011247" y="-22.20197044334978" />
+      <point x="32.5" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="2.184724982595071" showDependencies="true" x="207.94873751556145" y="89.46705094688909" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

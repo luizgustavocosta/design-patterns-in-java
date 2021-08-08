@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.gof.behavioral.visitor.RefereeVisitor</OriginalElement>
+  <nodes>
+    <node x="210.92441860465118" y="0.0">com.gof.behavioral.visitor.Player</node>
+    <node x="279.0436046511628" y="535.0">com.gof.behavioral.visitor.NodeMatch</node>
+    <node x="20.24418604651163" y="502.0">com.gof.behavioral.visitor.RefereeVisitor</node>
+    <node x="294.9244186046512" y="192.0">com.gof.behavioral.visitor.Team</node>
+    <node x="322.875" y="684.0">com.gof.behavioral.visitor.RefereeBeforeStartMatch</node>
+    <node x="58.25" y="342.0">com.gof.behavioral.visitor.VisitorRefereeTasks</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.gof.behavioral.visitor.RefereeBeforeStartMatch" target="com.gof.behavioral.visitor.Player" relationship="TO_MANY">
+      <point x="100.0" y="-71.5" />
+      <point x="542.875" y="663.0" />
+      <point x="568.6191860465117" y="663.0" />
+      <point x="568.6191860465117" y="172.0" />
+      <point x="424.6744186046512" y="172.0" />
+      <point x="424.6744186046512" y="162.0" />
+      <point x="335.4244186046512" y="162.0" />
+      <point x="41.5" y="71.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeBeforeStartMatch" target="com.gof.behavioral.visitor.NodeMatch" relationship="REALIZATION">
+      <point x="-20.0" y="-71.5" />
+      <point x="422.875" y="663.0" />
+      <point x="399.0436046511628" y="663.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.VisitorRefereeTasks" target="com.gof.behavioral.visitor.Team" relationship="DEPENDENCY">
+      <point x="49.75" y="-49.0" />
+      <point x="207.5" y="321.0" />
+      <point x="275.11918604651163" y="321.0" />
+      <point x="275.11918604651163" y="311.0" />
+      <point x="336.4244186046512" y="311.0" />
+      <point x="-41.5" y="49.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeBeforeStartMatch" target="com.gof.behavioral.visitor.Player" relationship="DEPENDENCY">
+      <point x="-100.0" y="-71.5" />
+      <point x="342.875" y="663.0" />
+      <point x="0.0" y="663.0" />
+      <point x="0.0" y="172.0" />
+      <point x="31.24418604651163" y="172.0" />
+      <point x="31.24418604651163" y="162.0" />
+      <point x="252.42441860465118" y="162.0" />
+      <point x="-41.5" y="71.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeBeforeStartMatch" target="com.gof.behavioral.visitor.VisitorRefereeTasks" relationship="DEPENDENCY">
+      <point x="-60.0" y="-71.5" />
+      <point x="382.875" y="653.0" />
+      <point x="268.5436046511628" y="653.0" />
+      <point x="268.5436046511628" y="481.0" />
+      <point x="312.4244186046511" y="481.0" />
+      <point x="312.4244186046511" y="461.0" />
+      <point x="207.5" y="461.0" />
+      <point x="49.75" y="49.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.Team" target="com.gof.behavioral.visitor.Player" relationship="TO_MANY">
+      <point x="0.0" y="-49.0" />
+      <point x="377.9244186046512" y="172.0" />
+      <point x="424.6744186046512" y="172.0" />
+      <point x="424.6744186046512" y="162.0" />
+      <point x="335.4244186046512" y="162.0" />
+      <point x="41.5" y="71.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeVisitor" target="com.gof.behavioral.visitor.Team" relationship="DEPENDENCY">
+      <point x="65.0" y="-60.0" />
+      <point x="182.74418604651163" y="471.0" />
+      <point x="275.11918604651163" y="471.0" />
+      <point x="275.11918604651163" y="311.0" />
+      <point x="336.4244186046512" y="311.0" />
+      <point x="-41.5" y="49.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeVisitor" target="com.gof.behavioral.visitor.Player" relationship="DEPENDENCY">
+      <point x="-65.0" y="-60.0" />
+      <point x="52.74418604651163" y="481.0" />
+      <point x="23.875" y="481.0" />
+      <point x="23.875" y="172.0" />
+      <point x="31.24418604651163" y="172.0" />
+      <point x="31.24418604651163" y="162.0" />
+      <point x="252.42441860465118" y="162.0" />
+      <point x="-41.5" y="71.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeVisitor" target="com.gof.behavioral.visitor.VisitorRefereeTasks" relationship="REALIZATION">
+      <point x="0.0" y="-60.0" />
+      <point x="117.74418604651163" y="481.0" />
+      <point x="108.0" y="481.0" />
+      <point x="-49.75" y="49.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeBeforeStartMatch" target="com.gof.behavioral.visitor.Team" relationship="TO_ONE">
+      <point x="60.0" y="-71.5" />
+      <point x="502.875" y="653.0" />
+      <point x="540.5436046511628" y="653.0" />
+      <point x="540.5436046511628" y="311.0" />
+      <point x="419.4244186046512" y="311.0" />
+      <point x="41.5" y="49.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.NodeMatch" target="com.gof.behavioral.visitor.VisitorRefereeTasks" relationship="DEPENDENCY">
+      <point x="-5.6843418860808015E-14" y="-27.0" />
+      <point x="399.04360465116275" y="481.0" />
+      <point x="312.4244186046511" y="481.0" />
+      <point x="312.4244186046511" y="461.0" />
+      <point x="207.5" y="461.0" />
+      <point x="49.75" y="49.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.VisitorRefereeTasks" target="com.gof.behavioral.visitor.Player" relationship="DEPENDENCY">
+      <point x="-49.75" y="-49.0" />
+      <point x="108.0" y="172.0" />
+      <point x="31.24418604651163" y="172.0" />
+      <point x="31.24418604651163" y="162.0" />
+      <point x="252.42441860465118" y="162.0" />
+      <point x="-41.5" y="71.0" />
+    </edge>
+    <edge source="com.gof.behavioral.visitor.RefereeBeforeStartMatch" target="com.gof.behavioral.visitor.Team" relationship="DEPENDENCY">
+      <point x="20.0" y="-71.5" />
+      <point x="462.875" y="643.0" />
+      <point x="529.5436046511628" y="643.0" />
+      <point x="529.5436046511628" y="321.0" />
+      <point x="275.11918604651163" y="321.0" />
+      <point x="275.11918604651163" y="311.0" />
+      <point x="336.4244186046512" y="311.0" />
+      <point x="-41.5" y="49.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="251.0" y="335.0" />
+  <SelectedNodes>
+    <node>com.gof.behavioral.visitor.Player</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
