@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.gof.structural.bridge.implementor.Container</OriginalElement>
+  <nodes>
+    <node x="0.0" y="148.0">com.gof.structural.bridge.implementor.Refrigerated</node>
+    <node x="442.0" y="148.0">com.gof.structural.bridge.implementor.DryBulk</node>
+    <node x="221.0" y="148.0">com.gof.structural.bridge.implementor.HighCube</node>
+    <node x="221.0" y="0.0">com.gof.structural.bridge.implementor.Container</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.gof.structural.bridge.implementor.Refrigerated" target="com.gof.structural.bridge.implementor.Container" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="100.5" y="123.0" />
+      <point x="321.5" y="123.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="com.gof.structural.bridge.implementor.HighCube" target="com.gof.structural.bridge.implementor.Container" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="com.gof.structural.bridge.implementor.DryBulk" target="com.gof.structural.bridge.implementor.Container" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="542.5" y="123.0" />
+      <point x="321.5" y="123.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.2999999999999998" showDependencies="true" x="229.4615384615385" y="269.69230769230774" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

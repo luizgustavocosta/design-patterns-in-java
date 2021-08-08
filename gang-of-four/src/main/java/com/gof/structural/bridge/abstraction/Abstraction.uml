@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.gof.structural.bridge.abstraction.WaterCraft</OriginalElement>
+  <nodes>
+    <node x="147.0" y="193.0">com.gof.structural.bridge.abstraction.Truck</node>
+    <node x="209.25" y="0.0">com.gof.structural.bridge.abstraction.Vehicle</node>
+    <node x="317.0" y="204.5">com.gof.structural.bridge.abstraction.Train</node>
+    <node x="464.0" y="204.5">com.gof.structural.bridge.abstraction.WaterCraft</node>
+    <node x="0.0" y="204.5">com.gof.structural.bridge.abstraction.AirCraft</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.gof.structural.bridge.abstraction.WaterCraft" target="com.gof.structural.bridge.abstraction.Vehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="530.5" y="168.0" />
+      <point x="301.25" y="168.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="com.gof.structural.bridge.abstraction.Train" target="com.gof.structural.bridge.abstraction.Vehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="380.5" y="168.0" />
+      <point x="301.25" y="168.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="com.gof.structural.bridge.abstraction.AirCraft" target="com.gof.structural.bridge.abstraction.Vehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="63.5" y="168.0" />
+      <point x="301.25" y="168.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="com.gof.structural.bridge.abstraction.Truck" target="com.gof.structural.bridge.abstraction.Vehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="222.0" y="168.0" />
+      <point x="301.25" y="168.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.2999999999999998" showDependencies="false" x="298.49999999999994" y="135.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
